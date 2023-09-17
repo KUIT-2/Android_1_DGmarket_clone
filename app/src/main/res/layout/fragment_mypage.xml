@@ -17,7 +17,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:scaleType="fitXY"/>git
+            android:scaleType="fitXY"/>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/iv_profile_menu"
