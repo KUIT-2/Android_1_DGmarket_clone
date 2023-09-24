@@ -12,12 +12,10 @@ class AlarmActivity : AppCompatActivity() {
     lateinit var binding: ActivityAlarmBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityAlarmBinding.inflate(layoutInflater)
-
-        //만들어놓은 화면 클릭시 상세정보(stuff로 이동)
+        binding =ActivityAlarmBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         binding.ivBackAl.setOnClickListener{
             finish()
         }
-        setContentView(binding.root)
     }
 }
