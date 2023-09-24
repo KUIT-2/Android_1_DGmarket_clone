@@ -70,6 +70,7 @@
         app:layout_constraintTop_toBottomOf="@+id/cl_top_appbar"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/item_1_layout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:padding="15dp"
@@ -120,7 +121,7 @@
                 android:layout_height="wrap_content"
                 android:text="19000원"
                 android:TextType="bold"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"/>
         </LinearLayout>
 
         <LinearLayout
@@ -132,7 +133,6 @@
             android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="@id/ll_item_home_like_1"
             app:layout_constraintEnd_toStartOf="@id/ll_item_home_like_1">
-            >
             <ImageView
                 android:id="@+id/iv_item_home_comment"
                 android:layout_width="wrap_content"
@@ -145,7 +145,7 @@
                 android:layout_height="wrap_content"
                 android:text="1"
                 android:textColor="@color/black"
-                android:textSize="12dp"/>
+                android:textSize="12sp"/>
         </LinearLayout>
 
         <LinearLayout
@@ -167,7 +167,7 @@
                 android:layout_height="wrap_content"
                 android:text="1"
                 android:textColor="@color/black"
-                android:textSize="12dp"/>
+                android:textSize="12sp"/>
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
