@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--상단 부분-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/homeF_cl_top_appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/homeF_tv_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="조원 2동"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/homeF_img_region_arrow"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_expand_more_outline_18"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/homeF_tv_location"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/homeF_img_home_menu"
+            android:layout_width="21dp"
+            android:layout_height="17dp"
+            android:layout_marginEnd="25dp"
+            android:src="@drawable/ic_home_menu"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/homeF_img_home_search"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/homeF_img_home_search"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginEnd="25dp"
+            android:src="@drawable/icon_search"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/homeF_img_home_alarm"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/homeF_img_home_alarm"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_notification_outline_18"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--회색 구분선-->
+    <View
+        android:id="@+id/homeF_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray_400"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/homeF_cl_top_appbar" />
+
+    <!--상품 01-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/homeF_cl_item_1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/homeF_line">
+
+        <!--상품 이미지-->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/homeF_img_thumnail_1"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/img_picture01" />
+        </androidx.cardview.widget.CardView>
+
+        <!--상품 정보-->
+        <LinearLayout
+            android:id="@+id/homeF_tv_contents_1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="5dp"
+            android:orientation="vertical"
+            app:layout_constraintStart_toEndOf="@id/homeF_img_thumnail_1"
+            app:layout_constraintTop_toTopOf="@id/homeF_img_thumnail_1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="저한텐 안어울리네요 새거예요"
+                android:textColor="@color/gray_900"
+                android:textSize="16dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="서울특별시 동대문구 58초전"
+                android:textColor="@color/gray_600" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="19,000원"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!--상품 좋아요/댓글-->
+        <LinearLayout
+            android:id="@+id/homeF_ll_comment_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="2dp"
+            android:gravity="center_vertical"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@id/homeF_ll_like_1"
+            app:layout_constraintEnd_toStartOf="@id/homeF_ll_like_1">
+
+            <ImageView
+                android:id="@+id/homeF_img_comment_1"
+                android:layout_width="wrap_content"
+                android:layout_height="15dp"
+                android:src="@drawable/icon_chat_count" />
+
+            <TextView
+                android:id="@+id/homeF_tv_comment_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:textColor="@color/gray_700"
+                android:textSize="12dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/homeF_ll_like_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <ImageView
+                android:id="@+id/homeF_img_like_1"
+                android:layout_width="wrap_content"
+                android:layout_height="13dp"
+                android:src="@drawable/icon_like_count" />
+
+            <TextView
+                android:id="@+id/homeF_tv_like_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:textColor="@color/gray_700"
+                android:textSize="12dp" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--상품 02-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/homeF_cl_item_2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/homeF_cl_item_1">
+
+        <!--상품 이미지-->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/homeF_img_thumnail_2"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/img_picture01" />
+        </androidx.cardview.widget.CardView>
+
+        <!--상품 정보-->
+        <LinearLayout
+            android:id="@+id/homeF_tv_contents_2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="5dp"
+            android:orientation="vertical"
+            app:layout_constraintStart_toEndOf="@id/homeF_img_thumnail_2"
+            app:layout_constraintTop_toTopOf="@id/homeF_img_thumnail_2">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="상품 판매합니다"
+                android:textColor="@color/gray_900"
+                android:textSize="16dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="서울특별시 광진구 58초전"
+                android:textColor="@color/gray_600" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="25,000원"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!--상품 좋아요/댓글-->
+        <LinearLayout
+            android:id="@+id/homeF_ll_comment_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="2dp"
+            android:gravity="center_vertical"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@id/homeF_ll_like_2"
+            app:layout_constraintEnd_toStartOf="@id/homeF_ll_like_2">
+
+            <ImageView
+                android:id="@+id/homeF_img_comment_2"
+                android:layout_width="wrap_content"
+                android:layout_height="15dp"
+                android:src="@drawable/icon_chat_count" />
+
+            <TextView
+                android:id="@+id/homeF_tv_comment_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:textColor="@color/gray_700"
+                android:textSize="12dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/homeF_ll_like_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <ImageView
+                android:id="@+id/homeF_iv_like_2"
+                android:layout_width="wrap_content"
+                android:layout_height="13dp"
+                android:src="@drawable/icon_like_count" />
+
+            <TextView
+                android:id="@+id/homeF_tv_like_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:textColor="@color/gray_700"
+                android:textSize="12dp" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

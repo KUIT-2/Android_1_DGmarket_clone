@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StuffInfoActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--상단 왼쪽 아이콘들-->
+        <LinearLayout
+            android:id="@+id/stuffA_ll_ic_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="20dp"
+            android:translationZ="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageButton
+                android:id="@+id/stuffA_btn_back"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginEnd="20dp"
+                android:background="@android:color/transparent"
+                android:scaleX="-1"
+                android:src="@drawable/ic_chevron_right_outline_s"
+                app:tint="@android:color/white" />
+
+            <ImageButton
+                android:id="@+id/stuffA_btn_home"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@android:color/transparent"
+                android:scaleType="fitXY"
+                android:src="@drawable/tab_icon_home_n"
+                app:tint="@android:color/white" />
+
+        </LinearLayout>
+
+        <!--상단 오른쪽 아이콘들-->
+        <LinearLayout
+            android:id="@+id/stuffA_ll_ic_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:translationZ="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageButton
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginEnd="20dp"
+                android:background="@android:color/transparent"
+                android:scaleType="fitXY"
+                android:src="@drawable/action_icon_share" />
+
+            <ImageButton
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@android:color/transparent"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_more_vert_ountline_24"
+                app:tint="@android:color/white" />
+
+        </LinearLayout>
+
+        <!--상품 사진-->
+        <ImageView
+            android:id="@+id/stuffA_img_article"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/img_computer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--판매자 프로필-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/stuffA_view_profile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/stuffA_img_article">
+
+            <!--판매자 프로필(사진)-->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/stuffA_img_profile"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="15dp"
+                app:cardCornerRadius="100dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/stuffA_ll_profile_address"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_dog" />
+
+            </androidx.cardview.widget.CardView>
+
+            <!--판매자 프로필(이름/동)-->
+            <LinearLayout
+                android:id="@+id/stuffA_ll_profile_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="180dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="@id/stuffA_img_profile"
+                app:layout_constraintEnd_toStartOf="@id/stuffA_tv_profile_heat"
+                app:layout_constraintStart_toEndOf="@id/stuffA_img_profile"
+                app:layout_constraintTop_toTopOf="@id/stuffA_img_profile">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="나침반"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="정자동" />
+            </LinearLayout>
+
+            <!--판매자 프로필(당근 온도)-->
+            <TextView
+                android:id="@+id/stuffA_tv_profile_heat"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:text="36.6°C"
+                android:textColor="@color/lightblue"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/stuffA_profile_heatBar"
+                app:layout_constraintEnd_toStartOf="@id/stuffA_img_heat"
+                app:layout_constraintStart_toEndOf="@id/stuffA_ll_profile_address"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ProgressBar
+                android:id="@+id/stuffA_profile_heatBar"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="60dp"
+                android:layout_height="5dp"
+                android:progress="37"
+                android:progressTint="@color/lightblue"
+                app:layout_constraintBottom_toTopOf="@id/stuffA_tv_heat_explain"
+                app:layout_constraintEnd_toEndOf="@id/stuffA_tv_profile_heat"
+                app:layout_constraintStart_toStartOf="@+id/stuffA_tv_profile_heat"
+                app:layout_constraintTop_toBottomOf="@id/stuffA_tv_profile_heat" />
+
+            <ImageView
+                android:id="@+id/stuffA_img_heat"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="15dp"
+                android:src="@drawable/face_3"
+                app:layout_constraintBottom_toBottomOf="@id/stuffA_profile_heatBar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/stuffA_tv_profile_heat"
+                app:layout_constraintTop_toTopOf="@id/stuffA_tv_profile_heat" />
+
+            <TextView
+                android:id="@+id/stuffA_tv_heat_explain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/heat_explain"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="@id/stuffA_img_profile"
+                app:layout_constraintEnd_toEndOf="@id/stuffA_img_heat"
+                app:layout_constraintTop_toBottomOf="@id/stuffA_profile_heatBar" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!--회색 구분선-->
+        <View
+            android:id="@+id/stuffA_line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:background="@color/gray_400"
+            app:layout_constraintTop_toBottomOf="@id/stuffA_view_profile" />
+
+        <!--게시글 본문-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/stuffA_line">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="컴퓨터 정리합니다."
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="15dp"
+                    android:text="@string/category_digital" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="끌올 3일 전" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="cpu:i5/9400f\n그래픽카드:gtx1660ti\n램:삼성 8gb x2 16GB\n메인보드:프라임 b365M-k\nssd:256gb\n파워:550w 정격\n디아 4, 롤,. 로아, 배그 게임 다 잘 돌아갑니다.\ncpu:i5/9400f\n그래픽카드:gtx1660ti\n램:삼성 8gb x2 16GB\n메인보드:프라임 b365M-k\nssd:256gb\n파워:550w 정격\n디아 4, 롤,. 로아, 배그 게임 다 잘 돌아갑니다.cpu:i5/9400f\n그래픽카드:gtx1660ti\n램:삼성 8gb x2 16GB\n메인보드:프라임 b365M-k\nssd:256gb\n파워:550w 정격\n디아 4, 롤,. 로아, 배그 게임 다 잘 돌아갑니다." />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
