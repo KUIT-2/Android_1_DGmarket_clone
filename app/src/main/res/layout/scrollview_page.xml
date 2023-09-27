@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/page_cons"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/im_top"
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/cat_pic"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="-14dp" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/im_cat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:cardCornerRadius="100dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@id/im_top"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="20dp">
+            <ImageView
+                android:scaleType="fitXY"
+                android:layout_width="70dp"
+                android:layout_height="68dp"
+                android:src="@drawable/cat" />
+
+        </androidx.cardview.widget.CardView>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toEndOf="@+id/im_cat"
+            app:layout_constraintTop_toTopOf="@+id/im_cat"
+            >
+            <TextView
+                android:id="@+id/text_cat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="고양이"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginStart="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="건국대학교"
+                android:layout_marginStart="10dp"/>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/im_smile"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/smile"
+            android:layout_marginEnd="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/im_cat"/>
+        <TextView
+            android:id="@+id/text_celcius"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/im_smile"
+            android:text="매너온도"
+            android:textStyle="bold"
+            android:textColor="#808080"/>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/im_cat"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+            <TextView
+                android:layout_marginStart="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="120dp"
+                android:text="구매한지 두달된 라이젠 5600X (RTX3070) 컴퓨터"
+                android:textSize="20dp"
+                android:maxLines="2"
+                android:textStyle="bold"
+                android:layout_marginTop="15dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="디지털기기·끌올 1일전"
+                android:textColor="#808080"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CPU-RYZEN 5600X(6코러 12쓰레드) 정품\nGPU-GEROCE RTX3070정품 \nMAINBORD-A520M-K 정품 \nRAM-SAMSUNG DDR4-16GB정품 \nSSD-IMATION 240GB 정품 \n두 대 전부 판매할거구요~\n거의 새거에요~\n연락주세요~"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                android:textSize="17sp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="브랜드 라이젠"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"/>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

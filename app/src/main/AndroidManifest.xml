@@ -10,8 +10,14 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.KUIT_Android"
+        android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
+        <activity
+            android:name=".AlarmActivity"
+            android:exported="false" />
+        <activity
+            android:name=".StuffInfoActivity"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
