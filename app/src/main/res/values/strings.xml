@@ -9,4 +9,5 @@
     <string name="category_digital"><u>디지털기기</u></string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="heat">%.1f°C</string>
 </resources>

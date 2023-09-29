@@ -73,7 +73,7 @@
         <!--상품 사진-->
         <ImageView
             android:id="@+id/stuffA_img_article"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="400dp"
             android:scaleType="fitXY"
             android:src="@drawable/img_computer"
@@ -97,6 +97,7 @@
                 android:layout_height="50dp"
                 android:layout_margin="15dp"
                 app:cardCornerRadius="100dp"
+                app:cardElevation="0dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/stuffA_ll_profile_address"
                 app:layout_constraintStart_toStartOf="parent"
@@ -125,6 +126,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:singleLine="true"
                     android:text="나침반"
                     android:textStyle="bold" />
 
@@ -141,7 +144,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 android:gravity="center"
-                android:text="36.6°C"
+                android:text="@string/heat"
                 android:textColor="@color/lightblue"
                 android:textSize="18sp"
                 android:textStyle="bold"
