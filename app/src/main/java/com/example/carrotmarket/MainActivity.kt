@@ -12,8 +12,8 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.navigation.setOnItemSelectedListener {
-            when(it.itemId){
+        binding.navigation.setOnItemSelectedListener {//아이템이 클릭되면 무엇을 할 것인가
+            when(it.itemId){//선택된 아이템의 Id, menu에 따라 다른 fragment 사용, backstack 사용 안 하고있음
                 R.id.menu_home -> {
                     supportFragmentManager.beginTransaction().replace(R.id.main_frm, HomeFragment()).commit()
                     return@setOnItemSelectedListener true
@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
                     supportFragmentManager.beginTransaction().replace(R.id.main_frm, MyCarrotFragment()).commit()
                     return@setOnItemSelectedListener true
                 }
-                else -> {
+                else -> {// Itemlistner 타입 떄매 사용
                     return@setOnItemSelectedListener true
                 }
             }
