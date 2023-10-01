@@ -11,7 +11,22 @@
     <string name="act_notice">활동 알림 </string>
     <string name="keyword_notice">키워드 알림 </string>
     <string name="user_name">고양이 </string>
-    <string name="some_id">고양이 </string>
+    <string name="some_id">프로필 보기 </string>
+    <string name="DG_pay">당근하는 새로운 방법, 당근페이!</string>
+    <string name="charge">충전 </string>
+    <string name="remittance">계좌 송금 </string>
+    <string name="whole_menu">전체 </string>
+    <string name="man_fashion">남성패션/잡화 </string>
+    <string name="woman_clothes">여성의류 </string>
+    <string name="furniture_interior">가구/인테리어 </string>
+    <string name="my_exchange">나의 거래 </string>
+    <string name="interest_list">관심목록 </string>
+    <string name="sold_list">판매내역 </string>
+    <string name="purchased_list">구매내역</string>
+    <string name="financial_ledge">중고거래 가계부 </string>
+    <string name="my_life">나의 동네생활 </string>
+    <string name="post_comment">동네생활 글/댓글 </string>
+    <string name="town_store">동네 가게 </string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
