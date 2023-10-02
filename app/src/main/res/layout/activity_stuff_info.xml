@@ -128,7 +128,7 @@
                     android:layout_height="wrap_content"
                     android:ellipsize="end"
                     android:singleLine="true"
-                    android:text="나침반"
+                    android:text="@string/seller_name"
                     android:textStyle="bold" />
 
                 <TextView

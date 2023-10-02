@@ -6,8 +6,20 @@
     <string name="menu_chatting">채팅</string>
     <string name="menu_my">나의 당근</string>
     <string name="heat_explain"><u>매너온도</u></string>
-    <string name="category_digital"><u>디지털기기</u></string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="heat">%.1f°C</string>
+    <string name="user_name">노나니노나</string>
+    <string name="seller_name">나침반</string>
+
+    <!--상품 카테고리 모음-->
+    <string name="category_all">전체</string>
+    <string name="category_man">남성패션/잡화</string>
+    <string name="category_woman">여성의류</string>
+    <string name="category_furniture">가구/인테리어</string>
+    <string name="category_food">가공식품</string>
+    <string name="category_beauty">뷰티/미용</string>
+    <string name="category_baby">유아동</string>
+    <string name="category_digital"><u>디지털기기</u></string>
+
 </resources>
