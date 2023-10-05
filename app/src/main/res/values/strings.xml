@@ -27,6 +27,9 @@
     <string name="my_life">나의 동네생활 </string>
     <string name="post_comment">동네생활 글/댓글 </string>
     <string name="town_store">동네 가게 </string>
+    <string name="price_my"> 20,000원 </string>
+    <string name="no_bargain">가격 제안 불가</string>
+    <string name="chatting">채팅하기</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
