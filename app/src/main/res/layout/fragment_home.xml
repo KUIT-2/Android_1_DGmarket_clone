@@ -1,45 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:background="@color/white">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_top_appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/cl_top_appbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="15dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <TextView
-            android:id="@+id/tv_location"
+            <TextView
+                android:id="@+id/tv_location"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="조원2동"
             android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/iv_region_arrow"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:src="@drawable/icon_arrow_down_s"
-            app:layout_constraintTop_toTopof="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@id/tv_location" />
+            app:layout_constraintStart_toEndOf="@id/tv_location"
+            app:layout_constraintTop_toTopOf="parent"
+            />
 
         <ImageView
             android:id="@+id/iv_home_alarm"
@@ -56,9 +51,9 @@
             android:layout_height="20dp"
             android:layout_marginEnd="25dp"
             android:src="@drawable/icon_search"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/iv_home_alarm"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/iv_home_menu"
@@ -66,9 +61,9 @@
             android:layout_height="17dp"
             android:layout_marginEnd="25dp"
             android:src="@drawable/tab_icon_category_p"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/iv_home_search"
-            app:layout_constraintBottom_toBottomOf="parent" />
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -77,1154 +72,1165 @@
         android:id="@+id/line"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/gray_700"
-        android:layout_constraintTop_toBottomOf="@id/cl_top_appbar"
-        android:layout_constraintStart_toStartOf="parent"
-        android:layout_constraintEnd_toEndOf="parent"/>
-
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/cl_item1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:padding="15dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/line">
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/iv_item_home_thumbnail_1"
-                android:layout_width="82dp"
-                android:layout_height="69dp"
-                android:elevation="0dp"
-                app:cardCornerRadius="10dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="fitXY"
-                android:src="@drawable/icon_best_s" />
-
-            </androidx.cardview.widget.CardView>
-
-            <LinearLayout
-                android:id="@+id/tv_item_home_contents_1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="5dp"
-                android:orientation="vertical"
-                app:layout_constraintEnd_toEndOf="parent"
-
-                app:layout_constraintStart_toEndOf="@id/iv_item_home_thumbnail_1"
-                app:layout_constraintTop_toTopOf="@id/iv_item_home_thumbnail_1">
-
-
-            <TextView
-                android:id="@+id/textView1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ellipsize="end"
-                android:maxLines="2"
-                android:text="생귤탱귤 제주 감귤 판매합니다 🍊"
-                android:textSize="16dp"
-                android:textStyle="bold" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="서귀포시 • 끌올 1분 전" />
-            <TextView
-                style="bold"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="20,000원" />
-
-        </LinearLayout>
-
-            <ImageView
-                android:id="@+id/iv_item_home_more_1"
-                android:layout_width="13dp"
-                android:layout_height="14dp"
-                android:layout_marginTop="3dp"
-                android:layout_marginEnd="7dp"
-                android:src="@drawable/ic_more_vert_ountline_24"
-                android:visibility="visible"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/iv_item_home_comment"
-                app:layout_constraintTop_toTopOf="@+id/iv_item_home_comment"
-                tools:ignore="NotSibling" />
-
-            <LinearLayout
-                android:id="@+id/ll_item_home_comment_1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="2dp"
-                android:gravity="center_vertical"
-                android:visibility="visible"
-                app:layout_constraintBottom_toBottomOf="@id/ll_item_home_like_1"
-                app:layout_constraintEnd_toStartOf="@id/ll_item_home_like_1">
-
-
-            <ImageView
-                android:id="@+id/iv_item_home_comment"
-                android:layout_width="20dp"
-                android:layout_height="match_parent"
-                android:src="@drawable/tab_icon_chat_n" />
-
-            <TextView
-                android:id="@+id/tv_item_home_comment"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="6"
-                android:textColor="@color/black"
-                android:textSize="12dp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/ll_item_home_like_1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:visibility="visible"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-
-                >
-
-                <ImageView
-                    android:id="@+id/iv_item_home_like"
-                    android:layout_width="15dp"
-                    android:layout_height="16dp"
-                    android:src="@drawable/icon_like_count" />
-
-                <TextView
-                    android:id="@+id/tv_item_home_like_1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="12"
-                    android:textColor="@color/black"
-                    android:textSize="12dp" />
-
-            </LinearLayout>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/cl_item2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:padding="15dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cl_item1">
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/iv_item_home_thumbnail_2"
-                android:layout_width="75dp"
-                android:layout_height="75dp"
-                android:elevation="0dp"
-                app:cardCornerRadius="10dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/icon_best_s" />
-
-            </androidx.cardview.widget.CardView>
-
-            <LinearLayout
-                android:id="@+id/tv_item_home_contents_2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="5dp"
-                android:orientation="vertical"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/iv_item_home_thumbnail_2"
-                app:layout_constraintTop_toTopOf="@id/iv_item_home_thumbnail_2">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:ellipsize="end"
-                    android:maxLines="2"
-                    android:text="급처) 러쉬 스프레이"
-                    android:textStyle="bold"
-                    android:textSize="16dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="계양구 계산동 • 끌올 1분 전" />
-
-                <TextView
-                    style="bold"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="10,000원" />
-            </LinearLayout>
-
-            <ImageView
-                android:id="@+id/iv_item_home_more_2"
-                android:layout_width="13dp"
-                android:layout_height="14dp"
-                android:layout_marginTop="3dp"
-                android:layout_marginEnd="7dp"
-                android:src="@drawable/ic_more_vert_ountline_24"
-                android:visibility="visible"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/iv_item_home_comment"
-                app:layout_constraintTop_toTopOf="@+id/iv_item_home_comment"
-                tools:ignore="NotSibling" />
-
-            <LinearLayout
-                android:id="@+id/ll_item_home_comment_2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="2dp"
-                android:gravity="center_vertical"
-                android:visibility="visible"
-                app:layout_constraintBottom_toBottomOf="@id/ll_item_home_like_2"
-                app:layout_constraintEnd_toStartOf="@id/ll_item_home_like_2">
-
-                <ImageView
-                    android:id="@+id/iv_item_home_comment_2"
-                    android:layout_width="15dp"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/tab_icon_chat_n" />
-
-                <TextView
-                    android:id="@+id/tv_item_home_comment_2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="8"
-                    android:textColor="@color/black"
-                    android:textSize="12dp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/ll_item_home_like_2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:visibility="visible"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-
-                >
-
-                <ImageView
-                    android:id="@+id/iv_item_home_like_2"
-                    android:layout_width="15dp"
-                    android:layout_height="13dp"
-                    android:src="@drawable/icon_like_count" />
-
-                <TextView
-                    android:id="@+id/tv_item_home_like_2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="11"
-                    android:textColor="@color/black"
-                    android:textSize="12dp" />
-
-            </LinearLayout>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/cl_item3"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:padding="15dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cl_item2">
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/iv_item_home_thumbnail_3"
-                android:layout_width="75dp"
-                android:layout_height="75dp"
-                android:elevation="0dp"
-                app:cardCornerRadius="10dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/icon_best_s" />
-
-            </androidx.cardview.widget.CardView>
-
-            <LinearLayout
-                android:id="@+id/tv_item_home_contents_3"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="5dp"
-                android:orientation="vertical"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/iv_item_home_thumbnail_3"
-                app:layout_constraintTop_toTopOf="@id/iv_item_home_thumbnail_3">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:ellipsize="end"
-                    android:maxLines="2"
-                    android:text="미니 고데기(거의 새거)"
-                    android:textSize="16dp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="계양구 작전동 • 8초 전" />
-
-                <TextView
-                    style="bold"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="10,000원" />
-            </LinearLayout>
-
-            <ImageView
-                android:id="@+id/iv_item_home_more_3"
-                android:layout_width="13dp"
-                android:layout_height="14dp"
-                android:layout_marginTop="3dp"
-                android:layout_marginEnd="7dp"
-                android:src="@drawable/ic_more_vert_ountline_24"
-                android:visibility="visible"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/iv_item_home_comment"
-                app:layout_constraintTop_toTopOf="@+id/iv_item_home_comment"
-                tools:ignore="NotSibling" />
-
-            <LinearLayout
-                android:id="@+id/ll_item_home_comment_3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="2dp"
-                android:gravity="center_vertical"
-                android:visibility="visible"
-                app:layout_constraintBottom_toBottomOf="@id/ll_item_home_like_3"
-                app:layout_constraintEnd_toStartOf="@id/ll_item_home_like_3">
-
-                <ImageView
-                    android:id="@+id/iv_item_home_comment_3"
-                    android:layout_width="15dp"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/tab_icon_chat_n" />
-
-                <TextView
-                    android:id="@+id/tv_item_home_comment_3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0"
-                    android:textColor="@color/black"
-                    android:textSize="12dp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/ll_item_home_like_3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:visibility="visible"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-
-                >
-
-                <ImageView
-                    android:id="@+id/iv_item_home_like_3"
-                    android:layout_width="15dp"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/icon_like_count" />
-
-                <TextView
-                    android:id="@+id/tv_item_home_like_3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="4"
-                    android:textColor="@color/black"
-                    android:textSize="12dp" />
-
-            </LinearLayout>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/cl_item4"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:padding="15dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cl_item3">
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/iv_item_home_thumbnail_4"
-                android:layout_width="75dp"
-                android:layout_height="75dp"
-                android:elevation="0dp"
-                app:cardCornerRadius="10dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/icon_best_s" />
-
-            </androidx.cardview.widget.CardView>
-
-            <LinearLayout
-                android:id="@+id/tv_item_home_contents_4"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="5dp"
-                android:orientation="vertical"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/iv_item_home_thumbnail_4"
-                app:layout_constraintTop_toTopOf="@id/iv_item_home_thumbnail_4">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:ellipsize="end"
-                    android:maxLines="2"
-                    android:text="🧡9월이달의아트🧡"
-                    android:textStyle="bold"
-                    android:textSize="16dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="원종동 • 추천소식" />
-
-
-            </LinearLayout>
-
-            <ImageView
-                android:id="@+id/iv_item_home_more_4"
-                android:layout_width="13dp"
-                android:layout_height="14dp"
-                android:layout_marginTop="3dp"
-                android:layout_marginEnd="7dp"
-                android:src="@drawable/ic_more_vert_ountline_24"
-                android:visibility="visible"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/iv_item_home_comment4"
-                app:layout_constraintTop_toTopOf="@+id/iv_item_home_comment4"
-                tools:ignore="NotSibling" />
-
-            <LinearLayout
-                android:id="@+id/ll_item_home_comment_4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="2dp"
-                android:gravity="center_vertical"
-                android:visibility="visible"
-                app:layout_constraintBottom_toBottomOf="@id/ll_item_home_like_4"
-                app:layout_constraintEnd_toStartOf="@id/ll_item_home_like_4">
-
-                <ImageView
-                    android:id="@+id/iv_item_home_comment4"
-                    android:layout_width="20dp"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/tab_icon_chat_n" />
-
-                <TextView
-                    android:id="@+id/tv_item_home_comment4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="1"
-                    android:textColor="@color/black"
-                    android:textSize="12dp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/ll_item_home_like_4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:visibility="visible"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-
-                >
-
-                <ImageView
-                    android:id="@+id/iv_item_home_like4"
-                    android:layout_width="15dp"
-                    android:layout_height="16dp"
-                    android:src="@drawable/icon_like_count" />
-
-                <TextView
-                    android:id="@+id/tv_item_home_like_4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="4"
-                    android:textColor="@color/black"
-                    android:textSize="12dp" />
-
-            </LinearLayout>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/cl_item5"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:padding="15dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cl_item4">
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/iv_item_home_thumbnail_5"
-                android:layout_width="75dp"
-                android:layout_height="75dp"
-                android:elevation="0dp"
-                app:cardCornerRadius="10dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/icon_best_s" />
-
-            </androidx.cardview.widget.CardView>
-
-            <LinearLayout
-                android:id="@+id/tv_item_home_contents_5"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="5dp"
-                android:orientation="vertical"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/iv_item_home_thumbnail_5"
-                app:layout_constraintTop_toTopOf="@id/iv_item_home_thumbnail_5">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:ellipsize="end"
-                    android:maxLines="2"
-                    android:text="코닥 필름카메라"
-                    android:textSize="16dp"
-                    android:textStyle="bold"
-                    />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="작동 • 41분 전" />
-
-                <TextView
-                    style="bold"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="10,000원" />
-            </LinearLayout>
-
-            <ImageView
-                android:id="@+id/iv_item_home_more_5"
-                android:layout_width="13dp"
-                android:layout_height="14dp"
-                android:layout_marginTop="3dp"
-                android:layout_marginEnd="7dp"
-                android:src="@drawable/ic_more_vert_ountline_24"
-                android:visibility="visible"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/iv_item_home_comment5"
-                app:layout_constraintTop_toTopOf="@+id/iv_item_home_comment5"
-                tools:ignore="NotSibling" />
-
-            <LinearLayout
-                android:id="@+id/ll_item_home_comment_5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="2dp"
-                android:gravity="center_vertical"
-                android:visibility="visible"
-                app:layout_constraintBottom_toBottomOf="@id/ll_item_home_like_5"
-                app:layout_constraintEnd_toStartOf="@id/ll_item_home_like_5">
-
-                <ImageView
-                    android:id="@+id/iv_item_home_comment5"
-                    android:layout_width="20dp"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/tab_icon_chat_n" />
-
-                <TextView
-                    android:id="@+id/tv_item_home_comment5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="1"
-                    android:textColor="@color/black"
-                    android:textSize="12dp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/ll_item_home_like_5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:visibility="visible"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-
-                >
-
-                <ImageView
-                    android:id="@+id/iv_item_home_like5"
-                    android:layout_width="15dp"
-                    android:layout_height="16dp"
-                    android:src="@drawable/icon_like_count" />
-
-                <TextView
-                    android:id="@+id/tv_item_home_like_5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="1"
-                    android:textColor="@color/black"
-                    android:textSize="12dp" />
-
-            </LinearLayout>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/cl_item6"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:padding="15dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cl_item5">
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/iv_item_home_thumbnail_6"
-                android:layout_width="75dp"
-                android:layout_height="75dp"
-                android:elevation="0dp"
-                app:cardCornerRadius="10dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/icon_best_s" />
-
-            </androidx.cardview.widget.CardView>
-
-            <ImageView
-                android:id="@+id/iv_item_home_more_6"
-                android:layout_width="13dp"
-                android:layout_height="14dp"
-                android:layout_marginTop="3dp"
-                android:layout_marginEnd="7dp"
-                android:src="@drawable/ic_more_vert_ountline_24"
-                android:visibility="visible"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/iv_item_home_comment6"
-                app:layout_constraintTop_toTopOf="@+id/iv_item_home_comment6"
-                tools:ignore="NotSibling" />
-
-            <LinearLayout
-                android:id="@+id/ll_item_home_comment_6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="2dp"
-                android:gravity="center_vertical"
-                android:visibility="visible"
-                app:layout_constraintBottom_toBottomOf="@id/ll_item_home_like_6"
-                app:layout_constraintEnd_toStartOf="@id/ll_item_home_like_6">
-
-                <ImageView
-                    android:id="@+id/iv_item_home_comment6"
-                    android:layout_width="20dp"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/tab_icon_chat_n" />
-
-                <TextView
-                    android:id="@+id/tv_item_home_comment6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="3"
-                    android:textColor="@color/black"
-                    android:textSize="12dp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/ll_item_home_like_6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:visibility="visible"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-
-                >
-
-                <ImageView
-                    android:id="@+id/iv_item_home_like6"
-                    android:layout_width="15dp"
-                    android:layout_height="16dp"
-                    android:src="@drawable/icon_like_count" />
-
-                <TextView
-                    android:id="@+id/tv_item_home_like_6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="5"
-                    android:textColor="@color/black"
-                    android:textSize="12dp"
-                    tools:ignore="DuplicateIds" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/tv_item_home_contents_6"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                tools:layout_editor_absoluteX="99dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:ellipsize="end"
-                    android:maxLines="2"
-                    android:text="불가리 뿌르 옴므 100ml"
-                    android:textSize="16dp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="원종동 • 5시간 전" />
-
-                <TextView
-                    style="bold"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="20,000원" />
-            </LinearLayout>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/cl_item7"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:padding="15dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cl_item6">
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/iv_item_home_thumbnail_7"
-                android:layout_width="75dp"
-                android:layout_height="75dp"
-                android:elevation="0dp"
-                app:cardCornerRadius="10dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/icon_best_s" />
-
-            </androidx.cardview.widget.CardView>
-
-            <LinearLayout
-                android:id="@+id/tv_item_home_contents_7"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="5dp"
-                android:orientation="vertical"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/iv_item_home_thumbnail_7"
-                app:layout_constraintTop_toTopOf="@id/iv_item_home_thumbnail_7">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:ellipsize="end"
-                    android:maxLines="2"
-                    android:text="아코 화이트 블루 PBT 키캡"
-                    android:textStyle="bold"
-                    android:textSize="16dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="부평구 삼산동 • 58초 전" />
-
-                <TextView
-                    style="bold"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="19,800원" />
-            </LinearLayout>
-
-            <ImageView
-                android:id="@+id/iv_item_home_more_7"
-                android:layout_width="13dp"
-                android:layout_height="14dp"
-                android:layout_marginTop="3dp"
-                android:layout_marginEnd="7dp"
-                android:src="@drawable/ic_more_vert_ountline_24"
-                android:visibility="visible"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/iv_item_home_comment7"
-                app:layout_constraintTop_toTopOf="@+id/iv_item_home_comment7"
-                tools:ignore="NotSibling" />
-
-            <LinearLayout
-                android:id="@+id/ll_item_home_comment_7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="2dp"
-                android:gravity="center_vertical"
-                android:visibility="visible"
-                app:layout_constraintBottom_toBottomOf="@id/ll_item_home_like_7"
-                app:layout_constraintEnd_toStartOf="@id/ll_item_home_like_7">
-
-                <ImageView
-                    android:id="@+id/iv_item_home_comment7"
-                    android:layout_width="20dp"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/tab_icon_chat_n" />
-
-                <TextView
-                    android:id="@+id/tv_item_home_comment7"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="1"
-                    android:textColor="@color/black"
-                    android:textSize="12dp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/ll_item_home_like_7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:visibility="visible"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-
-                >
-
-                <ImageView
-                    android:id="@+id/iv_item_home_like7"
-                    android:layout_width="15dp"
-                    android:layout_height="16dp"
-                    android:src="@drawable/icon_like_count" />
-
-                <TextView
-                    android:id="@+id/tv_item_home_like_7"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="1"
-                    android:textColor="@color/black"
-                    android:textSize="12dp" />
-
-            </LinearLayout>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/cl_item8"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:padding="15dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cl_item7">
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/iv_item_home_thumbnail_8"
-                android:layout_width="75dp"
-                android:layout_height="75dp"
-                android:elevation="0dp"
-                app:cardCornerRadius="10dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/icon_best_s" />
-
-            </androidx.cardview.widget.CardView>
-
-            <LinearLayout
-                android:id="@+id/tv_item_home_contents_8"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="5dp"
-                android:orientation="vertical"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/iv_item_home_thumbnail_8"
-                app:layout_constraintTop_toTopOf="@id/iv_item_home_thumbnail_8">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:ellipsize="end"
-                    android:maxLines="2"
-                    android:text="플리츠미니스커트 하늘색"
-                    android:textStyle="bold"
-                    android:textSize="16dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="성수2가제3동 • 끌올 1분 전" />
-
-                <TextView
-                    style="bold"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="8,000원" />
-            </LinearLayout>
-
-            <ImageView
-                android:id="@+id/iv_item_home_more_8"
-                android:layout_width="13dp"
-                android:layout_height="14dp"
-                android:layout_marginTop="3dp"
-                android:layout_marginEnd="7dp"
-                android:src="@drawable/ic_more_vert_ountline_24"
-                android:visibility="visible"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/iv_item_home_comment8"
-                app:layout_constraintTop_toTopOf="@+id/iv_item_home_comment8"
-                tools:ignore="NotSibling" />
-
-            <LinearLayout
-                android:id="@+id/ll_item_home_comment_8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="2dp"
-                android:gravity="center_vertical"
-                android:visibility="visible"
-                app:layout_constraintBottom_toBottomOf="@id/ll_item_home_like_8"
-                app:layout_constraintEnd_toStartOf="@id/ll_item_home_like_8">
-
-                <ImageView
-                    android:id="@+id/iv_item_home_comment8"
-                    android:layout_width="20dp"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/tab_icon_chat_n" />
-
-                <TextView
-                    android:id="@+id/tv_item_home_comment8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="6"
-                    android:textColor="@color/black"
-                    android:textSize="12dp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/ll_item_home_like_8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:visibility="visible"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-
-                >
-
-                <ImageView
-                    android:id="@+id/iv_item_home_like8"
-                    android:layout_width="15dp"
-                    android:layout_height="16dp"
-                    android:src="@drawable/icon_like_count" />
-
-                <TextView
-                    android:id="@+id/tv_item_home_like_8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="3"
-                    android:textColor="@color/black"
-                    android:textSize="12dp" />
-
-            </LinearLayout>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/cl_item9"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:padding="15dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cl_item8">
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/iv_item_home_thumbnail_9"
-                android:layout_width="75dp"
-                android:layout_height="75dp"
-                android:elevation="0dp"
-                app:cardCornerRadius="10dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/icon_best_s" />
-
-            </androidx.cardview.widget.CardView>
-
-            <LinearLayout
-                android:id="@+id/tv_item_home_contents_9"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="5dp"
-                android:orientation="vertical"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/iv_item_home_thumbnail_9"
-                app:layout_constraintTop_toTopOf="@id/iv_item_home_thumbnail_9">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:ellipsize="end"
-                    android:maxLines="2"
-                    android:text="컨버스뮬 240"
-                    android:textStyle="bold"
-                    android:textSize="16dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="성수2가제1동 • 2시간 전" />
-
-                <TextView
-                    style="bold"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="5,000원" />
-            </LinearLayout>
-
-            <ImageView
-                android:id="@+id/iv_item_home_more_9"
-                android:layout_width="13dp"
-                android:layout_height="14dp"
-                android:layout_marginTop="3dp"
-                android:layout_marginEnd="7dp"
-                android:src="@drawable/ic_more_vert_ountline_24"
-                android:visibility="visible"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/iv_item_home_comment9"
-                app:layout_constraintTop_toTopOf="@+id/iv_item_home_comment9"
-                tools:ignore="NotSibling" />
-
-            <LinearLayout
-                android:id="@+id/ll_item_home_comment_9"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="2dp"
-                android:gravity="center_vertical"
-                android:visibility="visible"
-                app:layout_constraintBottom_toBottomOf="@id/ll_item_home_like_9"
-                app:layout_constraintEnd_toStartOf="@id/ll_item_home_like_9">
-
-                <ImageView
-                    android:id="@+id/iv_item_home_comment9"
-                    android:layout_width="20dp"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/tab_icon_chat_n" />
-
-                <TextView
-                    android:id="@+id/tv_item_home_comment9"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="1"
-                    android:textColor="@color/black"
-                    android:textSize="12dp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/ll_item_home_like_9"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:visibility="visible"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-
-                >
-
-                <ImageView
-                    android:id="@+id/iv_item_home_like9"
-                    android:layout_width="15dp"
-                    android:layout_height="16dp"
-                    android:src="@drawable/icon_like_count" />
-
-                <TextView
-                    android:id="@+id/tv_item_home_like_9"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="3"
-                    android:textColor="@color/black"
-                    android:textSize="12dp" />
-
-            </LinearLayout>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        app:layout_constraintTop_toBottomOf="@id/cl_top_appbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/gray_700" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/line"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:listitem="@layout/item_home_product"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        android:id="@+id/cl_item1"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:padding="15dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/line">-->
+
+<!--        <androidx.cardview.widget.CardView-->
+<!--            android:id="@+id/iv_item_home_thumbnail_1"-->
+<!--            android:layout_width="82dp"-->
+<!--            android:layout_height="69dp"-->
+<!--            android:elevation="0dp"-->
+<!--            app:cardCornerRadius="10dp"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent">-->
+
+<!--            <ImageView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:scaleType="fitXY"-->
+<!--                android:src="@drawable/icon_best_s" />-->
+
+<!--        </androidx.cardview.widget.CardView>-->
+
+<!--        <LinearLayout-->
+<!--            android:id="@+id/tv_item_home_contents_1"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="15dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:orientation="vertical"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+
+<!--            app:layout_constraintStart_toEndOf="@id/iv_item_home_thumbnail_1"-->
+<!--            app:layout_constraintTop_toTopOf="@id/iv_item_home_thumbnail_1">-->
+
+
+<!--            <TextView-->
+<!--                android:id="@+id/textView1"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:ellipsize="end"-->
+<!--                android:maxLines="2"-->
+<!--                android:text="생귤탱귤 제주 감귤 판매합니다 🍊"-->
+<!--                android:textSize="16dp"-->
+<!--                android:textStyle="bold" />-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="서귀포시 • 끌올 1분 전" />-->
+
+<!--            <TextView-->
+<!--                style="bold"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="20,000원" />-->
+
+<!--        </LinearLayout>-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/iv_item_home_more_1"-->
+<!--            android:layout_width="13dp"-->
+<!--            android:layout_height="14dp"-->
+<!--            android:layout_marginTop="3dp"-->
+<!--            android:layout_marginEnd="7dp"-->
+<!--            android:src="@drawable/ic_more_vert_ountline_24"-->
+<!--            android:visibility="visible"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toEndOf="@id/iv_item_home_comment"-->
+<!--            app:layout_constraintTop_toTopOf="@+id/iv_item_home_comment"-->
+<!--            tools:ignore="NotSibling" />-->
+
+<!--        <LinearLayout-->
+<!--            android:id="@+id/ll_item_home_comment_1"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginEnd="2dp"-->
+<!--            android:gravity="center_vertical"-->
+<!--            android:visibility="visible"-->
+<!--            app:layout_constraintBottom_toBottomOf="@id/ll_item_home_like_1"-->
+<!--            app:layout_constraintEnd_toStartOf="@id/ll_item_home_like_1">-->
+
+
+<!--            <ImageView-->
+<!--                android:id="@+id/iv_item_home_comment"-->
+<!--                android:layout_width="20dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:src="@drawable/tab_icon_chat_n" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/tv_item_home_comment"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="6"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="12dp" />-->
+<!--        </LinearLayout>-->
+
+<!--        <LinearLayout-->
+<!--            android:id="@+id/ll_item_home_like_1"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:gravity="center_vertical"-->
+<!--            android:visibility="visible"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+
+<!--            >-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/iv_item_home_like"-->
+<!--                android:layout_width="15dp"-->
+<!--                android:layout_height="16dp"-->
+<!--                android:src="@drawable/icon_like_count" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/tv_item_home_like_1"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="12"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="12dp" />-->
+
+<!--        </LinearLayout>-->
+
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        android:id="@+id/cl_item2"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:padding="15dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.0"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/cl_item1">-->
+
+<!--        <androidx.cardview.widget.CardView-->
+<!--            android:id="@+id/iv_item_home_thumbnail_2"-->
+<!--            android:layout_width="75dp"-->
+<!--            android:layout_height="75dp"-->
+<!--            android:elevation="0dp"-->
+<!--            app:cardCornerRadius="10dp"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent">-->
+
+<!--            <ImageView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:scaleType="fitXY"-->
+<!--                android:src="@drawable/icon_best_s" />-->
+
+<!--        </androidx.cardview.widget.CardView>-->
+
+<!--        <LinearLayout-->
+<!--            android:id="@+id/tv_item_home_contents_2"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="15dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:orientation="vertical"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toEndOf="@id/iv_item_home_thumbnail_2"-->
+<!--            app:layout_constraintTop_toTopOf="@id/iv_item_home_thumbnail_2">-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:ellipsize="end"-->
+<!--                android:maxLines="2"-->
+<!--                android:text="급처) 러쉬 스프레이"-->
+<!--                android:textSize="16dp"-->
+<!--                android:textStyle="bold" />-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="계양구 계산동 • 끌올 1분 전" />-->
+
+<!--            <TextView-->
+<!--                style="bold"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="10,000원" />-->
+<!--        </LinearLayout>-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/iv_item_home_more_2"-->
+<!--            android:layout_width="13dp"-->
+<!--            android:layout_height="14dp"-->
+<!--            android:layout_marginTop="3dp"-->
+<!--            android:layout_marginEnd="7dp"-->
+<!--            android:src="@drawable/ic_more_vert_ountline_24"-->
+<!--            android:visibility="visible"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toEndOf="@id/iv_item_home_comment"-->
+<!--            app:layout_constraintTop_toTopOf="@+id/iv_item_home_comment"-->
+<!--            tools:ignore="NotSibling" />-->
+
+<!--        <LinearLayout-->
+<!--            android:id="@+id/ll_item_home_comment_2"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginEnd="2dp"-->
+<!--            android:gravity="center_vertical"-->
+<!--            android:visibility="visible"-->
+<!--            app:layout_constraintBottom_toBottomOf="@id/ll_item_home_like_2"-->
+<!--            app:layout_constraintEnd_toStartOf="@id/ll_item_home_like_2">-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/iv_item_home_comment_2"-->
+<!--                android:layout_width="15dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:src="@drawable/tab_icon_chat_n" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/tv_item_home_comment_2"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="8"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="12dp" />-->
+
+<!--        </LinearLayout>-->
+
+<!--        <LinearLayout-->
+<!--            android:id="@+id/ll_item_home_like_2"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:gravity="center_vertical"-->
+<!--            android:visibility="visible"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+
+<!--            >-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/iv_item_home_like_2"-->
+<!--                android:layout_width="15dp"-->
+<!--                android:layout_height="13dp"-->
+<!--                android:src="@drawable/icon_like_count" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/tv_item_home_like_2"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="11"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="12dp" />-->
+
+<!--        </LinearLayout>-->
+
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        android:id="@+id/cl_item3"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="4dp"-->
+<!--        android:padding="15dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="1.0"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/cl_item2">-->
+
+<!--        <androidx.cardview.widget.CardView-->
+<!--            android:id="@+id/iv_item_home_thumbnail_3"-->
+<!--            android:layout_width="75dp"-->
+<!--            android:layout_height="75dp"-->
+<!--            android:elevation="0dp"-->
+<!--            app:cardCornerRadius="10dp"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent">-->
+
+<!--            <ImageView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:scaleType="fitXY"-->
+<!--                android:src="@drawable/icon_best_s" />-->
+
+<!--        </androidx.cardview.widget.CardView>-->
+
+<!--        <LinearLayout-->
+<!--            android:id="@+id/tv_item_home_contents_3"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="15dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:orientation="vertical"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toEndOf="@id/iv_item_home_thumbnail_3"-->
+<!--            app:layout_constraintTop_toTopOf="@id/iv_item_home_thumbnail_3">-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:ellipsize="end"-->
+<!--                android:maxLines="2"-->
+<!--                android:text="미니 고데기(거의 새거)"-->
+<!--                android:textSize="16dp"-->
+<!--                android:textStyle="bold" />-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="계양구 작전동 • 8초 전" />-->
+
+<!--            <TextView-->
+<!--                style="bold"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="10,000원" />-->
+<!--        </LinearLayout>-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/iv_item_home_more_3"-->
+<!--            android:layout_width="13dp"-->
+<!--            android:layout_height="14dp"-->
+<!--            android:layout_marginTop="3dp"-->
+<!--            android:layout_marginEnd="7dp"-->
+<!--            android:src="@drawable/ic_more_vert_ountline_24"-->
+<!--            android:visibility="visible"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toEndOf="@id/iv_item_home_comment"-->
+<!--            app:layout_constraintTop_toTopOf="@+id/iv_item_home_comment"-->
+<!--            tools:ignore="NotSibling" />-->
+
+<!--        <LinearLayout-->
+<!--            android:id="@+id/ll_item_home_comment_3"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginEnd="2dp"-->
+<!--            android:gravity="center_vertical"-->
+<!--            android:visibility="visible"-->
+<!--            app:layout_constraintBottom_toBottomOf="@id/ll_item_home_like_3"-->
+<!--            app:layout_constraintEnd_toStartOf="@id/ll_item_home_like_3">-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/iv_item_home_comment_3"-->
+<!--                android:layout_width="15dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:src="@drawable/tab_icon_chat_n" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/tv_item_home_comment_3"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="0"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="12dp" />-->
+
+<!--        </LinearLayout>-->
+
+<!--        <LinearLayout-->
+<!--            android:id="@+id/ll_item_home_like_3"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:gravity="center_vertical"-->
+<!--            android:visibility="visible"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+
+<!--            >-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/iv_item_home_like_3"-->
+<!--                android:layout_width="15dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:src="@drawable/icon_like_count" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/tv_item_home_like_3"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="4"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="12dp" />-->
+
+<!--        </LinearLayout>-->
+
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        android:id="@+id/cl_item4"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:padding="15dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/cl_item3">-->
+
+<!--        <androidx.cardview.widget.CardView-->
+<!--            android:id="@+id/iv_item_home_thumbnail_4"-->
+<!--            android:layout_width="75dp"-->
+<!--            android:layout_height="75dp"-->
+<!--            android:elevation="0dp"-->
+<!--            app:cardCornerRadius="10dp"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent">-->
+
+<!--            <ImageView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:scaleType="fitXY"-->
+<!--                android:src="@drawable/icon_best_s" />-->
+
+<!--        </androidx.cardview.widget.CardView>-->
+
+<!--        <LinearLayout-->
+<!--            android:id="@+id/tv_item_home_contents_4"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="15dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:orientation="vertical"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toEndOf="@id/iv_item_home_thumbnail_4"-->
+<!--            app:layout_constraintTop_toTopOf="@id/iv_item_home_thumbnail_4">-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:ellipsize="end"-->
+<!--                android:maxLines="2"-->
+<!--                android:text="🧡9월이달의아트🧡"-->
+<!--                android:textSize="16dp"-->
+<!--                android:textStyle="bold" />-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="원종동 • 추천소식" />-->
+
+
+<!--        </LinearLayout>-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/iv_item_home_more_4"-->
+<!--            android:layout_width="13dp"-->
+<!--            android:layout_height="14dp"-->
+<!--            android:layout_marginTop="3dp"-->
+<!--            android:layout_marginEnd="7dp"-->
+<!--            android:src="@drawable/ic_more_vert_ountline_24"-->
+<!--            android:visibility="visible"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toEndOf="@id/iv_item_home_comment4"-->
+<!--            app:layout_constraintTop_toTopOf="@+id/iv_item_home_comment4"-->
+<!--            tools:ignore="NotSibling" />-->
+
+<!--        <LinearLayout-->
+<!--            android:id="@+id/ll_item_home_comment_4"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginEnd="2dp"-->
+<!--            android:gravity="center_vertical"-->
+<!--            android:visibility="visible"-->
+<!--            app:layout_constraintBottom_toBottomOf="@id/ll_item_home_like_4"-->
+<!--            app:layout_constraintEnd_toStartOf="@id/ll_item_home_like_4">-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/iv_item_home_comment4"-->
+<!--                android:layout_width="20dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:src="@drawable/tab_icon_chat_n" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/tv_item_home_comment4"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="1"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="12dp" />-->
+
+<!--        </LinearLayout>-->
+
+<!--        <LinearLayout-->
+<!--            android:id="@+id/ll_item_home_like_4"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:gravity="center_vertical"-->
+<!--            android:visibility="visible"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+
+<!--            >-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/iv_item_home_like4"-->
+<!--                android:layout_width="15dp"-->
+<!--                android:layout_height="16dp"-->
+<!--                android:src="@drawable/icon_like_count" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/tv_item_home_like_4"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="4"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="12dp" />-->
+
+<!--        </LinearLayout>-->
+
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        android:id="@+id/cl_item5"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:padding="15dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/cl_item4">-->
+
+<!--        <androidx.cardview.widget.CardView-->
+<!--            android:id="@+id/iv_item_home_thumbnail_5"-->
+<!--            android:layout_width="75dp"-->
+<!--            android:layout_height="75dp"-->
+<!--            android:elevation="0dp"-->
+<!--            app:cardCornerRadius="10dp"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent">-->
+
+<!--            <ImageView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:scaleType="fitXY"-->
+<!--                android:src="@drawable/icon_best_s" />-->
+
+<!--        </androidx.cardview.widget.CardView>-->
+
+<!--        <LinearLayout-->
+<!--            android:id="@+id/tv_item_home_contents_5"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="15dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:orientation="vertical"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toEndOf="@id/iv_item_home_thumbnail_5"-->
+<!--            app:layout_constraintTop_toTopOf="@id/iv_item_home_thumbnail_5">-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:ellipsize="end"-->
+<!--                android:maxLines="2"-->
+<!--                android:text="코닥 필름카메라"-->
+<!--                android:textSize="16dp"-->
+<!--                android:textStyle="bold" />-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="작동 • 41분 전" />-->
+
+<!--            <TextView-->
+<!--                style="bold"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="10,000원" />-->
+<!--        </LinearLayout>-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/iv_item_home_more_5"-->
+<!--            android:layout_width="13dp"-->
+<!--            android:layout_height="14dp"-->
+<!--            android:layout_marginTop="3dp"-->
+<!--            android:layout_marginEnd="7dp"-->
+<!--            android:src="@drawable/ic_more_vert_ountline_24"-->
+<!--            android:visibility="visible"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toEndOf="@id/iv_item_home_comment5"-->
+<!--            app:layout_constraintTop_toTopOf="@+id/iv_item_home_comment5"-->
+<!--            tools:ignore="NotSibling" />-->
+
+<!--        <LinearLayout-->
+<!--            android:id="@+id/ll_item_home_comment_5"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginEnd="2dp"-->
+<!--            android:gravity="center_vertical"-->
+<!--            android:visibility="visible"-->
+<!--            app:layout_constraintBottom_toBottomOf="@id/ll_item_home_like_5"-->
+<!--            app:layout_constraintEnd_toStartOf="@id/ll_item_home_like_5">-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/iv_item_home_comment5"-->
+<!--                android:layout_width="20dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:src="@drawable/tab_icon_chat_n" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/tv_item_home_comment5"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="1"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="12dp" />-->
+
+<!--        </LinearLayout>-->
+
+<!--        <LinearLayout-->
+<!--            android:id="@+id/ll_item_home_like_5"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:gravity="center_vertical"-->
+<!--            android:visibility="visible"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+
+<!--            >-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/iv_item_home_like5"-->
+<!--                android:layout_width="15dp"-->
+<!--                android:layout_height="16dp"-->
+<!--                android:src="@drawable/icon_like_count" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/tv_item_home_like_5"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="1"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="12dp" />-->
+
+<!--        </LinearLayout>-->
+
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        android:id="@+id/cl_item6"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:padding="15dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/cl_item5">-->
+
+<!--        <androidx.cardview.widget.CardView-->
+<!--            android:id="@+id/iv_item_home_thumbnail_6"-->
+<!--            android:layout_width="75dp"-->
+<!--            android:layout_height="75dp"-->
+<!--            android:elevation="0dp"-->
+<!--            app:cardCornerRadius="10dp"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent">-->
+
+<!--            <ImageView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:scaleType="fitXY"-->
+<!--                android:src="@drawable/icon_best_s" />-->
+
+<!--        </androidx.cardview.widget.CardView>-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/iv_item_home_more_6"-->
+<!--            android:layout_width="13dp"-->
+<!--            android:layout_height="14dp"-->
+<!--            android:layout_marginTop="3dp"-->
+<!--            android:layout_marginEnd="7dp"-->
+<!--            android:src="@drawable/ic_more_vert_ountline_24"-->
+<!--            android:visibility="visible"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toEndOf="@id/iv_item_home_comment6"-->
+<!--            app:layout_constraintTop_toTopOf="@+id/iv_item_home_comment6"-->
+<!--            tools:ignore="NotSibling" />-->
+
+<!--        <LinearLayout-->
+<!--            android:id="@+id/ll_item_home_comment_6"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginEnd="2dp"-->
+<!--            android:gravity="center_vertical"-->
+<!--            android:visibility="visible"-->
+<!--            app:layout_constraintBottom_toBottomOf="@id/ll_item_home_like_6"-->
+<!--            app:layout_constraintEnd_toStartOf="@id/ll_item_home_like_6">-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/iv_item_home_comment6"-->
+<!--                android:layout_width="20dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:src="@drawable/tab_icon_chat_n" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/tv_item_home_comment6"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="3"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="12dp" />-->
+
+<!--        </LinearLayout>-->
+
+<!--        <LinearLayout-->
+<!--            android:id="@+id/ll_item_home_like_6"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:gravity="center_vertical"-->
+<!--            android:visibility="visible"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+
+<!--            >-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/iv_item_home_like6"-->
+<!--                android:layout_width="15dp"-->
+<!--                android:layout_height="16dp"-->
+<!--                android:src="@drawable/icon_like_count" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/tv_item_home_like_6"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="5"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="12dp"-->
+<!--                tools:ignore="DuplicateIds" />-->
+
+<!--        </LinearLayout>-->
+
+<!--        <LinearLayout-->
+<!--            android:id="@+id/tv_item_home_contents_6"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="15dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:orientation="vertical"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toEndOf="@id/iv_item_home_thumbnail_6"-->
+<!--            app:layout_constraintTop_toTopOf="@id/iv_item_home_thumbnail_6">-->
+
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:ellipsize="end"-->
+<!--                android:maxLines="2"-->
+<!--                android:text="불가리 뿌르 옴므 100ml"-->
+<!--                android:textSize="16dp"-->
+<!--                android:textStyle="bold" />-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="원종동 • 5시간 전" />-->
+
+<!--            <TextView-->
+<!--                style="bold"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="20,000원" />-->
+<!--        </LinearLayout>-->
+
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        android:id="@+id/cl_item7"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:padding="15dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/cl_item6">-->
+
+<!--        <androidx.cardview.widget.CardView-->
+<!--            android:id="@+id/iv_item_home_thumbnail_7"-->
+<!--            android:layout_width="75dp"-->
+<!--            android:layout_height="75dp"-->
+<!--            android:elevation="0dp"-->
+<!--            app:cardCornerRadius="10dp"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent">-->
+
+<!--            <ImageView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:scaleType="fitXY"-->
+<!--                android:src="@drawable/icon_best_s" />-->
+
+<!--        </androidx.cardview.widget.CardView>-->
+
+<!--        <LinearLayout-->
+<!--            android:id="@+id/tv_item_home_contents_7"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="15dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:orientation="vertical"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toEndOf="@id/iv_item_home_thumbnail_7"-->
+<!--            app:layout_constraintTop_toTopOf="@id/iv_item_home_thumbnail_7">-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:ellipsize="end"-->
+<!--                android:maxLines="2"-->
+<!--                android:text="아코 화이트 블루 PBT 키캡"-->
+<!--                android:textSize="16dp"-->
+<!--                android:textStyle="bold" />-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="부평구 삼산동 • 58초 전" />-->
+
+<!--            <TextView-->
+<!--                style="bold"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="19,800원" />-->
+<!--        </LinearLayout>-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/iv_item_home_more_7"-->
+<!--            android:layout_width="13dp"-->
+<!--            android:layout_height="14dp"-->
+<!--            android:layout_marginTop="3dp"-->
+<!--            android:layout_marginEnd="7dp"-->
+<!--            android:src="@drawable/ic_more_vert_ountline_24"-->
+<!--            android:visibility="visible"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toEndOf="@id/iv_item_home_comment7"-->
+<!--            app:layout_constraintTop_toTopOf="@+id/iv_item_home_comment7"-->
+<!--            tools:ignore="NotSibling" />-->
+
+<!--        <LinearLayout-->
+<!--            android:id="@+id/ll_item_home_comment_7"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginEnd="2dp"-->
+<!--            android:gravity="center_vertical"-->
+<!--            android:visibility="visible"-->
+<!--            app:layout_constraintBottom_toBottomOf="@id/ll_item_home_like_7"-->
+<!--            app:layout_constraintEnd_toStartOf="@id/ll_item_home_like_7">-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/iv_item_home_comment7"-->
+<!--                android:layout_width="20dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:src="@drawable/tab_icon_chat_n" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/tv_item_home_comment7"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="1"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="12dp" />-->
+
+<!--        </LinearLayout>-->
+
+<!--        <LinearLayout-->
+<!--            android:id="@+id/ll_item_home_like_7"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:gravity="center_vertical"-->
+<!--            android:visibility="visible"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+
+<!--            >-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/iv_item_home_like7"-->
+<!--                android:layout_width="15dp"-->
+<!--                android:layout_height="16dp"-->
+<!--                android:src="@drawable/icon_like_count" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/tv_item_home_like_7"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="1"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="12dp" />-->
+
+<!--        </LinearLayout>-->
+
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        android:id="@+id/cl_item8"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:padding="15dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/cl_item7">-->
+
+<!--        <androidx.cardview.widget.CardView-->
+<!--            android:id="@+id/iv_item_home_thumbnail_8"-->
+<!--            android:layout_width="75dp"-->
+<!--            android:layout_height="75dp"-->
+<!--            android:elevation="0dp"-->
+<!--            app:cardCornerRadius="10dp"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent">-->
+
+<!--            <ImageView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:scaleType="fitXY"-->
+<!--                android:src="@drawable/icon_best_s" />-->
+
+<!--        </androidx.cardview.widget.CardView>-->
+
+<!--        <LinearLayout-->
+<!--            android:id="@+id/tv_item_home_contents_8"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="15dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:orientation="vertical"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toEndOf="@id/iv_item_home_thumbnail_8"-->
+<!--            app:layout_constraintTop_toTopOf="@id/iv_item_home_thumbnail_8">-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:ellipsize="end"-->
+<!--                android:maxLines="2"-->
+<!--                android:text="플리츠미니스커트 하늘색"-->
+<!--                android:textSize="16dp"-->
+<!--                android:textStyle="bold" />-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="성수2가제3동 • 끌올 1분 전" />-->
+
+<!--            <TextView-->
+<!--                style="bold"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="8,000원" />-->
+<!--        </LinearLayout>-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/iv_item_home_more_8"-->
+<!--            android:layout_width="13dp"-->
+<!--            android:layout_height="14dp"-->
+<!--            android:layout_marginTop="3dp"-->
+<!--            android:layout_marginEnd="7dp"-->
+<!--            android:src="@drawable/ic_more_vert_ountline_24"-->
+<!--            android:visibility="visible"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toEndOf="@id/iv_item_home_comment8"-->
+<!--            app:layout_constraintTop_toTopOf="@+id/iv_item_home_comment8"-->
+<!--            tools:ignore="NotSibling" />-->
+
+<!--        <LinearLayout-->
+<!--            android:id="@+id/ll_item_home_comment_8"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginEnd="2dp"-->
+<!--            android:gravity="center_vertical"-->
+<!--            android:visibility="visible"-->
+<!--            app:layout_constraintBottom_toBottomOf="@id/ll_item_home_like_8"-->
+<!--            app:layout_constraintEnd_toStartOf="@id/ll_item_home_like_8">-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/iv_item_home_comment8"-->
+<!--                android:layout_width="20dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:src="@drawable/tab_icon_chat_n" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/tv_item_home_comment8"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="6"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="12dp" />-->
+
+<!--        </LinearLayout>-->
+
+<!--        <LinearLayout-->
+<!--            android:id="@+id/ll_item_home_like_8"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:gravity="center_vertical"-->
+<!--            android:visibility="visible"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+
+<!--            >-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/iv_item_home_like8"-->
+<!--                android:layout_width="15dp"-->
+<!--                android:layout_height="16dp"-->
+<!--                android:src="@drawable/icon_like_count" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/tv_item_home_like_8"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="3"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="12dp" />-->
+
+<!--        </LinearLayout>-->
+
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        android:id="@+id/cl_item9"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:padding="15dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/cl_item8">-->
+
+<!--        <androidx.cardview.widget.CardView-->
+<!--            android:id="@+id/iv_item_home_thumbnail_9"-->
+<!--            android:layout_width="75dp"-->
+<!--            android:layout_height="75dp"-->
+<!--            android:elevation="0dp"-->
+<!--            app:cardCornerRadius="10dp"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent">-->
+
+<!--            <ImageView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:scaleType="fitXY"-->
+<!--                android:src="@drawable/icon_best_s" />-->
+
+<!--        </androidx.cardview.widget.CardView>-->
+
+<!--        <LinearLayout-->
+<!--            android:id="@+id/tv_item_home_contents_9"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="15dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:orientation="vertical"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toEndOf="@id/iv_item_home_thumbnail_9"-->
+<!--            app:layout_constraintTop_toTopOf="@id/iv_item_home_thumbnail_9">-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:ellipsize="end"-->
+<!--                android:maxLines="2"-->
+<!--                android:text="컨버스뮬 240"-->
+<!--                android:textSize="16dp"-->
+<!--                android:textStyle="bold" />-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="성수2가제1동 • 2시간 전" />-->
+
+<!--            <TextView-->
+<!--                style="bold"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="5,000원" />-->
+<!--        </LinearLayout>-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/iv_item_home_more_9"-->
+<!--            android:layout_width="13dp"-->
+<!--            android:layout_height="14dp"-->
+<!--            android:layout_marginTop="3dp"-->
+<!--            android:layout_marginEnd="7dp"-->
+<!--            android:src="@drawable/ic_more_vert_ountline_24"-->
+<!--            android:visibility="visible"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toEndOf="@id/iv_item_home_comment9"-->
+<!--            app:layout_constraintTop_toTopOf="@+id/iv_item_home_comment9"-->
+<!--            tools:ignore="NotSibling" />-->
+
+<!--        <LinearLayout-->
+<!--            android:id="@+id/ll_item_home_comment_9"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginEnd="2dp"-->
+<!--            android:gravity="center_vertical"-->
+<!--            android:visibility="visible"-->
+<!--            app:layout_constraintBottom_toBottomOf="@id/ll_item_home_like_9"-->
+<!--            app:layout_constraintEnd_toStartOf="@id/ll_item_home_like_9">-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/iv_item_home_comment9"-->
+<!--                android:layout_width="20dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:src="@drawable/tab_icon_chat_n" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/tv_item_home_comment9"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="1"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="12dp" />-->
+
+<!--        </LinearLayout>-->
+
+<!--        <LinearLayout-->
+<!--            android:id="@+id/ll_item_home_like_9"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:gravity="center_vertical"-->
+<!--            android:visibility="visible"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+
+<!--            >-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/iv_item_home_like9"-->
+<!--                android:layout_width="15dp"-->
+<!--                android:layout_height="16dp"-->
+<!--                android:src="@drawable/icon_like_count" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/tv_item_home_like_9"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="3"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="12dp" />-->
+
+<!--        </LinearLayout>-->
+
+
 

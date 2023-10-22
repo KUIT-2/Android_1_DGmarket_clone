@@ -15,8 +15,9 @@ class MainActivity : AppCompatActivity() {
         binding.navigation.setOnItemSelectedListener {
             when(it.itemId){
                 R.id.menu_home -> {
+                    //3주차에 실습한 코드, 저장하지 않으면 backstack에 저장되지 않음
                     supportFragmentManager.beginTransaction().replace(R.id.main_frm, HomeFragment()).commit()
-                    return@setOnItemSelectedListener true
+                    return@setOnItemSelectedListener true //onclicklistner의 type때문에 사용하는 것
                 }
                 R.id.menu_townlife -> {
                     supportFragmentManager.beginTransaction().replace(R.id.main_frm, TownLifeFragment()).commit()

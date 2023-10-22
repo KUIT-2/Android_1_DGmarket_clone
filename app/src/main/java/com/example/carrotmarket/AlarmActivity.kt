@@ -1,5 +1,6 @@
 package com.example.carrotmarket
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.carrotmarket.databinding.ActivityAlarmBinding
@@ -19,6 +20,7 @@ class AlarmActivity : AppCompatActivity() {
             finish()
         }
         setContentView(binding.root)
+
 
 
     }
