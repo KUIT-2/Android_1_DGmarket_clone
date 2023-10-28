@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/item_constraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="15dp">
+
+    <!--상품 이미지-->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/item_img_thumnail"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/item_img_thumnail_picture"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/img_picture01" />
+    </androidx.cardview.widget.CardView>
+
+    <!--상품 정보-->
+    <LinearLayout
+        android:id="@+id/item_tv_contents"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="5dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toEndOf="@id/item_img_thumnail"
+        app:layout_constraintTop_toTopOf="@id/item_img_thumnail">
+
+        <TextView
+            android:id="@+id/item_tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="저한텐 안어울리네요 새거예요"
+            android:textColor="@color/gray_900"
+            android:textSize="16dp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/item_tv_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:text="서울특별시 동대문구"
+                android:textColor="@color/gray_600" />
+
+            <TextView
+                android:id="@+id/item_tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="58초전"
+                android:textColor="@color/gray_600" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/item_tv_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="19,000원"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!--상품 좋아요/댓글-->
+    <LinearLayout
+        android:id="@+id/item_ll_comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="2dp"
+        android:gravity="center_vertical"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@id/item_ll_like"
+        app:layout_constraintEnd_toStartOf="@id/item_ll_like">
+
+        <ImageView
+            android:id="@+id/item_img_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="15dp"
+            android:src="@drawable/icon_chat_count" />
+
+        <TextView
+            android:id="@+id/item_tv_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:textColor="@color/gray_700"
+            android:textSize="12dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/item_ll_like"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/item_img_like"
+            android:layout_width="wrap_content"
+            android:layout_height="13dp"
+            android:src="@drawable/icon_like_count" />
+
+        <TextView
+            android:id="@+id/item_tv_like"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:textColor="@color/gray_700"
+            android:textSize="12dp" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
