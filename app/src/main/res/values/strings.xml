@@ -22,4 +22,12 @@
     <string name="category_baby">유아동</string>
     <string name="category_digital"><u>디지털기기</u></string>
 
+    <!--item_exercise_alarm-->
+    <string name="exercise_main_text">노나니노나님, 아직 당근마켓 새 이름을 모르시나요?</string>
+    <string name="exercise_sub_text">새로워진 당신 근처의 \'OO\'을 만나보세요</string>
+
+    <!--item_keyword_alarm-->
+    <string name="keyword_main_text">노나니노나님, OO에 대해 들어보셨나요?</string>
+    <string name="keyword_sub_text">새로워진 당신 근처의 \'OO\'을 만나보세요</string>
+
 </resources>
