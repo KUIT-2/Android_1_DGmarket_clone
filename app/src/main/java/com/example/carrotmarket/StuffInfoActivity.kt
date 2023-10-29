@@ -1,8 +1,10 @@
 package com.example.carrotmarket
 
 import android.os.Build
+import android.os.Build.VERSION_CODES.R
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.core.graphics.drawable.toDrawable
 import com.example.carrotmarket.databinding.ActivityStuffInfoBinding
 import com.example.carrotmarket.databinding.FragmentHomeBinding
 
@@ -22,8 +24,8 @@ class StuffInfoActivity : AppCompatActivity() {
         val data=if(Build.VERSION.SDK_INT>= Build.VERSION_CODES.TIRAMISU){
             intent.getSerializableExtra("information",ProductInfo::class.java)
         }else{
-            intent.getSerializableExtra("key") as ProductInfo
-        }?: ProductInfo(R.drawable.cat,"null","null","null","0","0")//엘비스 연산자 null이면 뒤에거넣을거 null대비
+            intent.getSerializableExtra("key") as ProductInfo?
+        }?: ProductInfo(0,"null","null","null",0,0)//엘비스 연산자 null이면 뒤에거넣을거 null대비
         binding.imTopStu.setImageResource(data.thumbnail)
         binding.tvLocation.text=data.location
         binding.tvTitle.text=data.title

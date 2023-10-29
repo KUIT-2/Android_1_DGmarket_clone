@@ -39,8 +39,8 @@ class ProductAdapter(val productList: ArrayList<ProductInfo>) :
             binding.tvItemHomeContentsTitle.text=productInfo.title
             binding.tvItemHomeContentsLocation.text=productInfo.location
             binding.tvItemHomeContentsPrice.text=productInfo.price
-            binding.tvItemHomeComment.text=productInfo.comment_num
-            binding.tvItemHomeLike.text=productInfo.like_num
+            binding.tvItemHomeComment.text=productInfo.comment_num.toString()
+            binding.tvItemHomeLike.text=productInfo.like_num.toString()
             binding.itemLayout.setOnClickListener{
                 itemClickListener.onItemClick(productInfo)//view누르면 메인 페이지로 가지게
             }

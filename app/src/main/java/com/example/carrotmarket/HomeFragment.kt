@@ -64,16 +64,15 @@ class HomeFragment : Fragment() {
     private fun initDummyData() {
         productList.addAll(
             arrayListOf(
-                ProductInfo(R.drawable.computer, "상품1제목", "서울특별시 강서구·10분전", "19000원", "1", "1"),
-                ProductInfo(R.drawable.computer1, "상품2제목", "서울특별시 강서구·20분전", "29000원", "1", "1"),
-                ProductInfo(R.drawable.computer2, "상품3제목", "서울특별시 강서구·30분전", "39000원", "1", "1"),
-                ProductInfo(R.drawable.computer3, "상품4제목", "서울특별시 강서구·40분전", "19000원", "1", "1"),
-                ProductInfo(R.drawable.computer, "상품5제목", "서울특별시 강서구·50분전", "99000원", "1", "1"),
-                ProductInfo(R.drawable.computer1, "상품6제목", "서울특별시 강서구·60분전", "119000원", "1", "1"),
-                ProductInfo(R.drawable.computer1, "상품6제목", "서울특별시 강서구·60분전", "119000원", "1", "1"),
+                ProductInfo(R.drawable.computer, "상품1제목", "서울특별시 강서구·10분전", "19000원", 1, 1),
+                ProductInfo(R.drawable.computer1, "상품2제목", "서울특별시 강서구·20분전", "29000원", 2, 2),
+                ProductInfo(R.drawable.computer2, "상품3제목", "서울특별시 강서구·30분전", "39000원", 2, 2),
+                ProductInfo(R.drawable.computer3, "상품4제목", "서울특별시 강서구·40분전", "19000원", 2, 2),
+                ProductInfo(R.drawable.computer, "상품5제목", "서울특별시 강서구·50분전", "99000원", 2, 2),
+                ProductInfo(R.drawable.computer1, "상품6제목", "서울특별시 강서구·60분전", "119000원", 2, 2),
+                ProductInfo(R.drawable.computer1, "상품6제목", "서울특별시 강서구·60분전", "119000원", 2, 2),
                 )
         )
     }
-
 
 }
