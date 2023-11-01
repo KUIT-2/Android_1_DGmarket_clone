@@ -21,6 +21,7 @@ class HomeFragment : Fragment() {
     ): View? {
         binding = FragmentHomeBinding.inflate(layoutInflater)
 
+        //home에서 넘어가니 여기에 imglist랑 viewpager 구현?
         //만들어놓은 화면 클릭시 상세정보(stuff로 이동)
         /*       binding.item1Layout.setOnClickListener {//나중에 Recycler item 클릭하면 되게
                    val intent = Intent(requireContext(), StuffInfoActivity::class.java)//reflection 알아오기
@@ -64,6 +65,7 @@ class HomeFragment : Fragment() {
     private fun initDummyData() {
         productList.addAll(
             arrayListOf(
+
                 ProductInfo(R.drawable.computer, "상품1제목", "서울특별시 강서구·10분전", "19000원", 1, 1),
                 ProductInfo(R.drawable.computer1, "상품2제목", "서울특별시 강서구·20분전", "29000원", 2, 2),
                 ProductInfo(R.drawable.computer2, "상품3제목", "서울특별시 강서구·30분전", "39000원", 2, 2),
