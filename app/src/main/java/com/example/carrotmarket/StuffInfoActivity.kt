@@ -3,12 +3,19 @@ package com.example.carrotmarket
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
+import android.util.Log
 import androidx.viewpager2.widget.ViewPager2
 import com.example.carrotmarket.databinding.ActivityStuffInfoBinding
 
 class StuffInfoActivity : AppCompatActivity() {
     private lateinit var binding: ActivityStuffInfoBinding
     private val imgList = mutableListOf<String>()
+
+    // ImageSwiper 구현
+//    private val imageSwiper = ImageSwiper()
+    private val pageHandler = Handler(Looper.getMainLooper())
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,7 +45,86 @@ class StuffInfoActivity : AppCompatActivity() {
 
         initDummyData()
         initViewPager()
+
+//        imageSwiper.start()
+
+        var imageSwiperRunnable = Thread(ImageSwiperRunnable())
+        imageSwiperRunnable.start()
     }
+
+//    inner class ImageSwiper : Thread() {
+//        override fun run() {
+//            try {
+//                while (true) {
+//                    sleep(1500)
+//                    pageHandler.post {
+//                        var position = binding.stuffAImgArticle.currentItem // vp의 현재 item의 번호를 지정
+//
+//                        if (position == 2) { // vp가 끝에 도달하면(사진이 3개이기 때문)
+//                            position = 0
+//                        } else {
+//                            position++
+//                        }
+//
+//                        binding.stuffAImgArticle.currentItem = position
+//                    }
+//                }
+//            } catch (e: InterruptedException) {
+//                Log.d("INTERRUPT", "쓰레드 종료")
+//                interrupt()
+//            }
+//        }
+//    }
+
+    // Runnable
+    inner class ImageSwiperRunnable : Runnable {
+        override fun run() {
+            try {
+                while (true) {
+                    Thread.sleep(1500)
+                    pageHandler.post {
+                        var position = binding.stuffAImgArticle.currentItem // vp의 현재 item의 번호를 지정
+
+                        if (position == 2) { // vp가 끝에 도달하면(사진이 3개이기 때문)
+                            position = 0
+                        } else {
+                            position++
+                        }
+
+                        binding.stuffAImgArticle.currentItem = position
+                    }
+                }
+            } catch (e: InterruptedException) {
+                Log.d("INTERRUPT", "쓰레드 종료")
+            }
+        }
+    }
+
+    private fun setPage() {
+        var position = binding.stuffAImgArticle.currentItem // vp의 현재 item의 번호를 지정
+
+        if (position == 2) { // vp가 끝에 도달하면(사진이 3개이기 때문)
+            position = 0
+        } else {
+            position++
+        }
+
+        binding.stuffAImgArticle.currentItem = position
+    }
+
+    inner class PageRunnable : Runnable {
+        override fun run() {
+            try {
+                while (true) {
+                    Thread.sleep(2000)
+                    pageHandler.sendEmptyMessage(0)
+                }
+            } catch (e: InterruptedException) {
+                Log.d("INTERRUPT", "쓰레드 종료")
+            }
+        }
+    }
+
 
     private fun initViewPager() {
         binding.stuffAImgArticle.adapter =
