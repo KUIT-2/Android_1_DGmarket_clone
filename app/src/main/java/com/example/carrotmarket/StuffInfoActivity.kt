@@ -24,16 +24,18 @@ class StuffInfoActivity : AppCompatActivity() {
         binding.ivBackStu.setOnClickListener{
             finish()//뒤로가기누르면 끝
         }
+
+        //TODO:여기 아마 고쳐아 될 entity로 고침
         val data=if(Build.VERSION.SDK_INT>= Build.VERSION_CODES.TIRAMISU){
-            intent.getSerializableExtra("information",ProductInfo::class.java)
+            intent.getSerializableExtra("information",ProductEntity::class.java)//Entity 클래스에서 받아와야 하는데 왜 안되는가
         }else{
-            intent.getSerializableExtra("key") as ProductInfo?
-        }?: ProductInfo(0,"null","null","null",0,0)//엘비스 연산자 null이면 뒤에거넣을거 null대비
+            intent.getSerializableExtra("key") as ProductEntity?
+        }?: ProductEntity(0,"null","null","null",0,0)//엘비스 연산자 null이면 뒤에거넣을거 null대비
 
         //binding.imTopStu.setImageResource(data.thumbnail)//Glide형태로 넘겨야하니흠
-        binding.tvLocation.text=data.location
-        binding.tvTitle.text=data.title
-        binding.tvPrice.text=data.price
+        binding.tvLocation.text=data.location//위치
+        binding.tvTitle.text=data.title//제목
+        binding.tvPrice.text=data.price//가격
 
         imageSwiper.start()
         initDummyData()
@@ -53,7 +55,7 @@ class StuffInfoActivity : AppCompatActivity() {
                     sleep(2000)
                     pagerHandler.post{//Post를 통해서 전달된 runnable객체는 핸들러를 통해 해당 스레드에서 실행된다!
                         var position=binding.imTopStu.currentItem//위치전달이요
-                            position++//실습과 다르게 여기는 postion을 내가 무한대로 설정해놨으니, 그냥 증가 시키면 자연스럽게 넘어가짐!
+                            position++;//실습과 다르게 여기는 postion을 내가 무한대로 설정해놨으니, 그냥 증가 시키면 자연스럽게 넘어가짐!
                         binding.imTopStu.currentItem=position
                     }//이벤트등록
                 }
