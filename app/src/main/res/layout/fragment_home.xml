@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_top_appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+
+        android:padding="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="양재동"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_region_arrow"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_expand_more_outline_18"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_location"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_alarm"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/icon_notification"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_home_search"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginEnd="25dp"
+            android:src="@drawable/icon_search"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/iv_alarm"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_home_menu"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginEnd="25dp"
+            android:src="@drawable/tab_icon_category_n"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/iv_home_search"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/text_home"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray_500"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cl_top_appbar" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/itemspace1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/line">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/iv_item_home_thumbnail_1"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:elevation="0dp"
+            android:layout_margin="15dp"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/app_icon_splash_logo" />
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:id="@+id/tv_item_home_contents_1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical"
+            app:layout_constraintStart_toEndOf="@+id/iv_item_home_thumbnail_1"
+            app:layout_constraintTop_toTopOf="@id/iv_item_home_thumbnail_1">
+
+
+            <TextView
+                android:id="@+id/tv_itemIntroducement1_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="새거에요"
+                android:textColor="@color/gray_900"
+                android:textSize="16dp"
+                app:layout_constraintStart_toEndOf="@id/iv_item_home_thumbnail_1" />
+
+            <TextView
+                android:id="@+id/tv_itemIntroducement1_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="서울특별시 동대문구 58초전"
+                android:textColor="@color/gray_600"
+                app:layout_constraintStart_toEndOf="@id/iv_item_home_thumbnail_1"
+                app:layout_constraintTop_toBottomOf="@id/tv_itemIntroducement1_1" />
+
+            <TextView
+                android:id="@+id/tv_itemIntroducement1_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="19,000원"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/iv_item_home_thumbnail_1"
+                app:layout_constraintTop_toBottomOf="@id/tv_itemIntroducement1_2" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/line2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray_600"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/itemspace2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/itemspace1">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/iv_item_home_thumbnail_2"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:elevation="0dp"
+            android:layout_margin="15dp"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/app_icon_splash_logo" />
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:id="@+id/tv_item_home_contents_2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical"
+            app:layout_constraintStart_toEndOf="@+id/iv_item_home_thumbnail_2"
+            app:layout_constraintTop_toTopOf="@id/iv_item_home_thumbnail_2">
+
+
+            <TextView
+                android:id="@+id/tv_itemIntroducement2_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="New Balance 990v6 made in usa gray"
+                android:textColor="@color/gray_900"
+                android:textSize="16dp"
+                app:layout_constraintStart_toEndOf="@id/iv_item_home_thumbnail_2" />
+
+            <TextView
+                android:id="@+id/tv_itemIntroducement2_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="서울특별시 서초구 58초전"
+                android:textColor="@color/gray_600"
+                app:layout_constraintStart_toEndOf="@id/iv_item_home_thumbnail_2"
+                app:layout_constraintTop_toBottomOf="@id/tv_itemIntroducement2_1" />
+
+            <TextView
+                android:id="@+id/tv_itemIntroducement2_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="19,000원"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/iv_item_home_thumbnail_2"
+                app:layout_constraintTop_toBottomOf="@id/tv_itemIntroducement2_2" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
