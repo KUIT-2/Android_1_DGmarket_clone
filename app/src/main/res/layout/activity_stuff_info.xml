@@ -71,123 +71,107 @@
         </LinearLayout>
 
         <!--상품 사진-->
-        <ImageView
+        <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/stuffA_img_article"
             android:layout_width="0dp"
             android:layout_height="400dp"
             android:scaleType="fitXY"
-            android:src="@drawable/img_computer"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <!--판매자 프로필-->
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/stuffA_view_profile"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
+        <!--판매자 프로필(사진)-->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/stuffA_img_profile"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="15dp"
+            app:cardCornerRadius="100dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toTopOf="@id/stuffA_line"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/stuffA_img_article">
 
-            <!--판매자 프로필(사진)-->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/stuffA_img_profile"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_margin="15dp"
-                app:cardCornerRadius="100dp"
-                app:cardElevation="0dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/stuffA_ll_profile_address"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/img_dog" />
-
-            </androidx.cardview.widget.CardView>
-
-            <!--판매자 프로필(이름/동)-->
-            <LinearLayout
-                android:id="@+id/stuffA_ll_profile_address"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="180dp"
-                android:orientation="vertical"
-                app:layout_constraintBottom_toBottomOf="@id/stuffA_img_profile"
-                app:layout_constraintEnd_toStartOf="@id/stuffA_tv_profile_heat"
-                app:layout_constraintStart_toEndOf="@id/stuffA_img_profile"
-                app:layout_constraintTop_toTopOf="@id/stuffA_img_profile">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:ellipsize="end"
-                    android:singleLine="true"
-                    android:text="나침반"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="정자동" />
-            </LinearLayout>
-
-            <!--판매자 프로필(당근 온도)-->
-            <TextView
-                android:id="@+id/stuffA_tv_profile_heat"
-                android:layout_width="60dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:gravity="center"
-                android:text="@string/heat"
-                android:textColor="@color/lightblue"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@id/stuffA_profile_heatBar"
-                app:layout_constraintEnd_toStartOf="@id/stuffA_img_heat"
-                app:layout_constraintStart_toEndOf="@id/stuffA_ll_profile_address"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ProgressBar
-                android:id="@+id/stuffA_profile_heatBar"
-                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                android:layout_width="60dp"
-                android:layout_height="5dp"
-                android:progress="37"
-                android:progressTint="@color/lightblue"
-                app:layout_constraintBottom_toTopOf="@id/stuffA_tv_heat_explain"
-                app:layout_constraintEnd_toEndOf="@id/stuffA_tv_profile_heat"
-                app:layout_constraintStart_toStartOf="@+id/stuffA_tv_profile_heat"
-                app:layout_constraintTop_toBottomOf="@id/stuffA_tv_profile_heat" />
-
             <ImageView
-                android:id="@+id/stuffA_img_heat"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="15dp"
-                android:src="@drawable/face_3"
-                app:layout_constraintBottom_toBottomOf="@id/stuffA_profile_heatBar"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/stuffA_tv_profile_heat"
-                app:layout_constraintTop_toTopOf="@id/stuffA_tv_profile_heat" />
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/img_dog" />
+
+        </androidx.cardview.widget.CardView>
+
+        <!--판매자 프로필(이름/동)-->
+        <LinearLayout
+            android:id="@+id/stuffA_ll_profile_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@id/stuffA_img_profile"
+            app:layout_constraintStart_toEndOf="@id/stuffA_img_profile"
+            app:layout_constraintTop_toTopOf="@id/stuffA_img_profile">
 
             <TextView
-                android:id="@+id/stuffA_tv_heat_explain"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/heat_explain"
-                android:textSize="13sp"
-                app:layout_constraintBottom_toBottomOf="@id/stuffA_img_profile"
-                app:layout_constraintEnd_toEndOf="@id/stuffA_img_heat"
-                app:layout_constraintTop_toBottomOf="@id/stuffA_profile_heatBar" />
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="@string/seller_name"
+                android:textStyle="bold" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/stuffA_tv_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="정자동" />
+        </LinearLayout>
+
+        <!--판매자 프로필(당근 온도)-->
+        <TextView
+            android:id="@+id/stuffA_tv_profile_heat"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:text="@string/heat"
+            android:textColor="@color/lightblue"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/stuffA_profile_heatBar"
+            app:layout_constraintEnd_toStartOf="@id/stuffA_img_heat"
+            app:layout_constraintTop_toBottomOf="@id/stuffA_img_article" />
+
+        <ProgressBar
+            android:id="@+id/stuffA_profile_heatBar"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="60dp"
+            android:layout_height="5dp"
+            android:progress="37"
+            android:progressTint="@color/lightblue"
+            app:layout_constraintBottom_toTopOf="@id/stuffA_tv_heat_explain"
+            app:layout_constraintEnd_toEndOf="@id/stuffA_tv_profile_heat"
+            app:layout_constraintStart_toStartOf="@+id/stuffA_tv_profile_heat"
+            app:layout_constraintTop_toBottomOf="@id/stuffA_tv_profile_heat" />
+
+        <ImageView
+            android:id="@+id/stuffA_img_heat"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="15dp"
+            android:src="@drawable/face_3"
+            app:layout_constraintBottom_toBottomOf="@id/stuffA_profile_heatBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/stuffA_tv_profile_heat" />
+
+        <TextView
+            android:id="@+id/stuffA_tv_heat_explain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/heat_explain"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="@id/stuffA_img_profile"
+            app:layout_constraintEnd_toEndOf="@id/stuffA_img_heat"
+            app:layout_constraintTop_toBottomOf="@id/stuffA_profile_heatBar" />
 
         <!--회색 구분선-->
         <View
@@ -195,9 +179,10 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
             android:layout_marginEnd="15dp"
             android:background="@color/gray_400"
-            app:layout_constraintTop_toBottomOf="@id/stuffA_view_profile" />
+            app:layout_constraintTop_toBottomOf="@id/stuffA_img_profile" />
 
         <!--게시글 본문-->
         <LinearLayout
@@ -209,6 +194,7 @@
             app:layout_constraintTop_toBottomOf="@id/stuffA_line">
 
             <TextView
+                android:id="@+id/stuffA_tv_product_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="컴퓨터 정리합니다."
