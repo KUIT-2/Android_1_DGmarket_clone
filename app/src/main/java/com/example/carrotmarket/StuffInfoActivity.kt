@@ -33,10 +33,10 @@ class StuffInfoActivity : AppCompatActivity() {
 
         // HomeFragment에서 intent로 정보 받아오기
         val data = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            intent.getSerializableExtra("Key", DataProduct::class.java)
+            intent.getSerializableExtra("Key", ProductEntity::class.java)
         } else {
-            intent.getSerializableExtra("Key") as DataProduct
-        } ?: DataProduct(R.drawable.ic_warning_filled_s, "temp", "temp", "temp", 0, 0)
+            intent.getSerializableExtra("Key") as ProductEntity
+        } ?: ProductEntity(R.drawable.ic_warning_filled_s, "temp", "temp", "temp", 0, 0)
 
         // intent에 담긴 정보 받아와서 화면에 반영
 //        binding.stuffAImgArticle.setImageResource(data.thumnail) //상품 이미지
