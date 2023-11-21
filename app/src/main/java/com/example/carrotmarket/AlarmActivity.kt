@@ -29,7 +29,7 @@ class AlarmActivity : AppCompatActivity() {
     }
 
     private fun initView() {
-        binding.mainVp.adapter = AlarmTabLayoutVPAdapter(this)
+        binding.mainVp.adapter = AlarmTabLayoutVPAdapter(this@AlarmActivity)
 
 
         //TabLayout의 viewpager 를 접목시키기 위해서 Mediator 와 attach사용한다.

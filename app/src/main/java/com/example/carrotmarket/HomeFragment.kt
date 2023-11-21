@@ -9,17 +9,23 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.carrotmarket.databinding.FragmentHomeBinding
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+
 class HomeFragment : Fragment() {
     lateinit var binding: FragmentHomeBinding
-
     var productAdapter: ProductAdapter? = null
-    val productList: ArrayList<ProductInfo> = arrayListOf()
-
+    var productList: ArrayList<ProductEntity> = arrayListOf()
+    var productDB : ProductDatabase ?= null
+    var count = 0
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
+
     ): View? {
         binding = FragmentHomeBinding.inflate(layoutInflater)
 
@@ -28,6 +34,7 @@ class HomeFragment : Fragment() {
 //            val intent = Intent(requireContext(), StuffInfoActivity::class.java)
 //            startActivity(intent)
 //        }
+
 
         //알람 페이지로 넘어가기 구현
         binding.ivHomeAlarm.setOnClickListener {
@@ -42,7 +49,22 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        initDummyData()
+        //context구현
+        productDB = ProductDatabase.getInstance(requireContext())
+
+
+        CoroutineScope(Dispatchers.IO).launch {
+            initDummyData()
+
+            val arrList = arrayListOf<ProductEntity>()
+            arrList.addAll(productDB!!.getProductDAO().getAllProducts())
+            productList = arrList
+
+            withContext(Dispatchers.Main){
+                (binding.recyclerView.adapter as ProductAdapter).setData(productList)
+            }
+        }
+        //initDummyData() 함수는 더 이상 호출할 필요가 없다.
         attachProductAdapter()
     }
 
@@ -55,7 +77,7 @@ class HomeFragment : Fragment() {
 
         // TODO : setOnItemClickListener에 제공할 인터페이스를 익명 클래스로 작성하고,  화면 클릭 이벤트 구현하기
         productAdapter!!.setOnItemClickListener( object : ProductAdapter.OnItemClickListener {
-            override fun onItemClick(productInfo: ProductInfo ) {
+            override fun onItemClick(productInfo: ProductEntity ) {
                 //클릭 이벤트 구현
                 //새 인텐트 구현
                 val intent = Intent(requireContext(), StuffInfoActivity::class.java)
@@ -63,6 +85,8 @@ class HomeFragment : Fragment() {
                 startActivity(intent)
 
             }
+
+
         }
 
         )
@@ -70,14 +94,35 @@ class HomeFragment : Fragment() {
 
     // TODO: 각자 구성한 데이터 클래스에 맞게 더미 데이터를 구성해보기
     private fun initDummyData() {
-        productList.addAll(
-            arrayListOf(
-                ProductInfo(R.drawable.icon_best_s, "상품1제목", "서울특별시 강서구·10분전", "19000원", "1", "1"),
-                ProductInfo(R.drawable.icon_best_s, "상품2제목", "서울특별시 강서구·20분전", "29000원", "1", "1"),
-                ProductInfo(R.drawable.icon_best_s, "상품3제목", "서울특별시 강서구·30분전", "39000원", "1", "1"),
-                ProductInfo(R.drawable.icon_best_s, "상품4제목", "서울특별시 강서구·40분전", "19000원", "1", "1"),
-                ProductInfo(R.drawable.icon_best_s, "상품6제목", "서울특별시 강서구·60분전", "119000원", "1", "1"),
-                ProductInfo(R.drawable.icon_best_s, "상품6제목", "서울특별시 강서구·60분전", "119000원", "1", "1"),
+        // productDB 인스턴스를 사용하여 DAO를 가져와 제품을 추가합니다.
+        productDB?.getProductDAO()?.addProduct(
+            ProductEntity(
+                R.drawable.icon_best_s, "상품1제목", "서울특별시 강서구·10분전", "19000원", "1", "1"
+            )
+        )
+        productDB?.getProductDAO()?.addProduct(
+            ProductEntity(
+                R.drawable.icon_best_s, "상품2제목", "서울특별시 강서구·20분전", "29000원", "1", "1"
+            )
+        )
+        productDB?.getProductDAO()?.addProduct(
+            ProductEntity(
+                R.drawable.icon_best_s, "상품3제목", "서울특별시 강서구·30분전", "39000원", "1", "1"
+            )
+        )
+        productDB?.getProductDAO()?.addProduct(
+            ProductEntity(
+                R.drawable.icon_best_s, "상품4제목", "서울특별시 강서구·40분전", "19000원", "1", "1"
+            )
+        )
+        productDB?.getProductDAO()?.addProduct(
+            ProductEntity(
+                R.drawable.icon_best_s, "상품5제목", "서울특별시 강서구·50분전", "109000원", "1", "1"
+            )
+        )
+        productDB?.getProductDAO()?.addProduct(
+            ProductEntity(
+                R.drawable.icon_best_s, "상품6제목", "서울특별시 강서구·60분전", "119000원", "1", "1"
             )
         )
     }

@@ -1,6 +1,8 @@
 package com.example.carrotmarket
 import java.io.Serializable
 
+
+
 class ProductInfo (
     val thumbnail: Int,
     val title: String,
