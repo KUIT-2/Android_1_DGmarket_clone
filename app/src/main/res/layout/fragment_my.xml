@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="https://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+<!--스크롤뷰안에는 뷰가 1개밖에 못 들어간다.그래서 여러개의 view를 넣기 위해서 layout꽉 차게 넣어야 함-->
+    <!--전체를 scrollview로 감싸고 그 안에 constraintlayout으로 넣고  위에 이미지
+    cardview , 밑에 내용 채우기 과정으로 실습, 바같이 어려운 부분은 이미지view, 카드뷰, 아이콘 등을 넣어서 해봐라-->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="내 당근"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+</ScrollView>
