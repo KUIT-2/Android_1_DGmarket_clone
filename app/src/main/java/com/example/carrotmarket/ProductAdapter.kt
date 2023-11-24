@@ -19,7 +19,7 @@ class ProductAdapter(var productList: ArrayList<ProductEntity>) :
 
     fun setOnItemClickListener(onItemClickListener: OnItemClickListener) {
         itemClickListener = onItemClickListener//외부의 활동을 받는?
-    }
+    }//초기화
 
     /*  해설: RecyclerView에 들어갈 item을 구성하는 xml의 이름이 item_home_product.xml 이므로
       * 따라서 binding 은 ItemHomeProductBinding으로 작성된다.
@@ -29,11 +29,9 @@ class ProductAdapter(var productList: ArrayList<ProductEntity>) :
         //ViewHolder를 만들어 놓으면 될 듯!!
         fun bind(ProductEntity: ProductEntity) {
 
-
             //binding.ivItemHomeThumbnail.//image를 어케주지 ?
             //이전엔 holder의 setImageResource썻음
             //혹은 그냥 findViewbyId 에서 imageVie
-
             val img:ImageView=binding.ivItemHomeThumbnailIm//imageView 담는 상수 하나 선언
             img.setImageResource(ProductEntity.thumbnail)//setImageResource해와서 부름
             binding.tvItemHomeContentsTitle.text=ProductEntity.title
@@ -41,8 +39,6 @@ class ProductAdapter(var productList: ArrayList<ProductEntity>) :
             binding.tvItemHomeContentsPrice.text=ProductEntity.price
             binding.tvItemHomeComment.text=ProductEntity.comment_num.toString()
             binding.tvItemHomeLike.text=ProductEntity.like_num.toString()
-
-
             binding.itemLayout.setOnClickListener {
                 itemClickListener.onItemClick(ProductEntity)//view누르면 메인 페이지로 가지게
             }

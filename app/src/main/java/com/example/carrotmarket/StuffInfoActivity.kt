@@ -69,7 +69,6 @@ class StuffInfoActivity : AppCompatActivity() {
     //여기에 쓰레드 하나 생성해서 sleep 1000으로 해서 움직이게!
 
     private fun initViewPager() {
-
         binding.imTopStu.adapter=ImageSliderVPAdapter(applicationContext,imgList)//어댑터 적용+
         binding.imTopStu.orientation= ViewPager2.ORIENTATION_HORIZONTAL//orientation
     }

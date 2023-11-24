@@ -27,11 +27,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/tv_nickname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="11dp"
         android:fontFamily="@font/inter_bold"
-        android:text="유저"
+        android:text="로그인을 해주세요"
         android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/iv_user_profile_image"
@@ -39,7 +40,7 @@
         app:layout_constraintTop_toTopOf="@+id/iv_user_profile_image" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/frame_64"
+        android:id="@+id/login_btn"
         android:layout_width="80dp"
         android:layout_height="29dp"
         android:layout_alignParentRight="true"
@@ -51,7 +52,7 @@
         app:layout_constraintTop_toTopOf="parent">
         <!-- Auto layout, variables, and unit scale are not yet supported -->
         <TextView
-            android:id="@+id/some_id"
+            android:id="@+id/tv_login"
             android:layout_width="54dp"
             android:layout_height="13dp"
             android:fontFamily="@font/inter_bold"
@@ -59,6 +60,7 @@
             android:text="@string/some_id"
             android:textAppearance="@style/some_id"
             android:textColor="@color/black"
+            android:paddingStart="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

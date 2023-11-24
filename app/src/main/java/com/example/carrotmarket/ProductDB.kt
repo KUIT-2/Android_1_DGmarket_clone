@@ -25,6 +25,5 @@ abstract class ProductDB: RoomDatabase() {//구현 위해 ROomDb받아오기
             }
             return instance!!//그냥 기존거 받아옴
         }
-
     }
 }

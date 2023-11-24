@@ -39,7 +39,6 @@ class HomeFragment : Fragment() {
         productDB = ProductDB.getInstance(requireContext()) // 변경된 부분
         //여기서 실습은 activity 라서 this지만 여기선 안된다 그래서 requireCOntext넣음
 
-
         binding.ivAlarm.setOnClickListener {
             val intent = Intent(requireContext(), AlarmActivity::class.java)//reflection 알아오기
             //fragment this 아닌 requireContext 사용
@@ -49,7 +48,6 @@ class HomeFragment : Fragment() {
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {//UI 만드는 곳이라 UI 관련 작업은 이 이후에 하는게 좋다
         super.onViewCreated(view, savedInstanceState)
-
         CoroutineScope(Dispatchers.IO).launch {
             initDummyData()//코루틴안에 작성,더미데이터 종류
             var products=productDB!!.getMyProductDao().getProducts()//products로 product 가져옴
@@ -70,7 +68,6 @@ class HomeFragment : Fragment() {
         binding.recyclerviewHome.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)//recyclerview 어떻게 보여줄지?
         productAdapter!!.setOnItemClickListener(object : ProductAdapter.OnItemClickListener {//어댑터 연동
-
 
             override fun onItemClick(ProductEntity: ProductEntity) {
                 //여기서 넘어가는거 구현

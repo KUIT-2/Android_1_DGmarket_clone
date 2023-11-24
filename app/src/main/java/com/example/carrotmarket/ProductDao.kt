@@ -7,7 +7,7 @@ import androidx.room.Query
 import androidx.room.Update
 
 @Dao
-interface ProductDao {//기능들 적는 곳
+interface ProductDao {//인터페이스니 구현은 못 하는 부분임
 @Insert
 
 fun addProduct(product:ProductEntity)
@@ -17,6 +17,6 @@ fun addProduct(product:ProductEntity)
     @Delete
     fun deleteProducts(product:ProductEntity)
 
-    @Query("SELECT*FROM ProductEntitytable")
+    @Query("SELECT*FROM ProductEntitytable")//이걸 getProducts
     fun getProducts():List<ProductEntity>
 }
