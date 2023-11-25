@@ -3,11 +3,12 @@ import org.jetbrains.kotlin.storage.CacheResetOnProcessCanceled.enabled
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("kotlin-kapt")
 }
 
 android {
     namespace = "com.example.carrotmarket"
-    compileSdk = 33
+    compileSdk = 34
 
     buildFeatures {
         viewBinding = true
@@ -41,6 +42,11 @@ android {
 }
 
 dependencies {
+    implementation ("com.github.bumptech.glide:glide:4.13.0")
+    annotationProcessor ("com.github.bumptech.glide:compiler:4.13.0")
+    implementation ("androidx.recyclerview:recyclerview:1.3.1")
+    // For control over item selection of both touch and mouse driven selection
+    implementation ("androidx.recyclerview:recyclerview-selection:1.1.0")
     implementation ("de.hdodenhof:circleimageview:3.1.0") //Circle ImageView
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
@@ -49,4 +55,14 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    implementation ("androidx.room:room-runtime:2.6.0") // 현재 사용 중인 버전에 맞게 업데이트
+    annotationProcessor ("androidx.room:room-compiler:2.6.0") // 현재 사용 중인 버전에 맞게 업데이트
+
+
+
+    //retrofit
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")//retrofit
+
+    kapt ("androidx.room:room-compiler:2.6.0")
 }
